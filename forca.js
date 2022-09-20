@@ -9,13 +9,10 @@ function escolherPalavraSecreta() {
     console.log(palavraSecreta);
 }
 
-
-
-
-
-
 function iniciaJogo() {
     document.getElementById("div-desaparece").style.display = "none";
 
-    escolherPalavraSecreta()
+    escolherPalavraSecreta();
+    desenharCanvas();
+    desenharLinhas();
 }
