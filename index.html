@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Jogo da Forca</title>
+</head>
+<body>
+    <img src="/imagens/logo.svg" class="logo" alt="Logo">
+    <section id="div-desaparece" class="botoes-home">
+        <a href="#forca">
+        <!-- Botão -->
+            <input class="btn-iniciar" type="submit" value="Iniciar Jogo" id="iniciar-jogo" onclick="iniciaJogo()">
+        </a>
+    </section>
+    <section id="div-aparece-forca" class="canvas">
+        <!-- Canvas -->
+        <canvas id="forca" height="860px" width="1200px"></canvas>
+        <div class="sublinhado">
+        </div>
+    </section>
+
+    <!-- Links -->
+    <script type="text/javascript" src="forca.js"></script>
+
+</body>
+</html>
