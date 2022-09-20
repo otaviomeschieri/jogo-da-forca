@@ -74,3 +74,27 @@ body {
     left:42rem;
 }
 
+footer {
+    letter-spacing: 3.5px;
+    color: white;
+  text-align: center;
+  background: black;
+  padding: 25px 0;
+    
+    border-top: 0.4px solid white;
+}
+
+footer p {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.links {
+    position: relative;
+}
+
+.links a {
+    display: inline;
+  margin: 0 12px 0 12px;
+}
