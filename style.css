@@ -61,9 +61,18 @@ body {
 }
 
 .canvas {
-    margin-left: 2.5rem;
+    /*margin-left: 2.5rem;*/
     width: 1024px;
     height:800px;
+}
+
+#forca {
+    /*display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    position: absolute;
+    left: -596px;
+    top: -86px;*/
 }
 
 .botoes-home {
