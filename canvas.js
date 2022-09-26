@@ -31,6 +31,16 @@ function desenharLinhas() {
     tela.closePath();
 }
 
+//Alterar com mensagem de FIM DE JOGO
+function fimDeJogo() {
+        tela.fillStyle = "black";
+		tela.beginPath();
+		tela.moveTo(50, 50);
+		tela.lineTo(50, 400);
+		tela.lineTo(400, 400);
+		tela.fill();
+	}
+
 function escreverLetraCorreta(index) {
     tela.font = "bold 52px Inter"
     tela.lineCap = "round";

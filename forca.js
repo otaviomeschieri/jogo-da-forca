@@ -31,6 +31,9 @@ function verificarLetra(key) {
 
 function adicionarLetraIncorreta() {
     erros -= 1;
+    if(erros == 0) {
+        fimDeJogo();
+    }
     console.log(erros);
 }
 
@@ -55,3 +58,7 @@ function iniciaJogo() {
         }
     }
 }
+
+//Mensagem: Parabéns
+//Mensagem: Perdeu !!!!!!!!!!!!!!!!!!
+//Desenhar boneco
