@@ -32,6 +32,7 @@ function verificarLetra(key) {
 function adicionarLetraIncorreta() {
     erros -= 1;
     if(erros == 0) {
+        mensagemFimDeJogo()
         fimDeJogo();
     }
     console.log(erros);
@@ -41,6 +42,9 @@ function iniciaJogo() {
     document.getElementById("div-desaparece").style.display = "none";
     escolherPalavraSecreta();
     desenharCanvas();
+    desenharForca();
+    desenharCorda();
+    desenharCabeça();
     desenharLinhas();
 
     document.onkeydown = (e) => {
@@ -57,6 +61,13 @@ function iniciaJogo() {
             escreverLetraIncorreta(letra,erros);
         }
     }
+}
+
+document.getElementById("div-fim-de-jogo").style.display = 'none';
+
+function mensagemFimDeJogo() {
+    //document.getElementById("forca").style.display = 'none';
+    document.getElementById("div-fim-de-jogo").style.display = 'flex';
 }
 
 //Mensagem: Parabéns

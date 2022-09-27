@@ -83,6 +83,13 @@ body {
     left:42rem;
 }
 
+#div-fim-de-jogo {
+    background: yellow;
+    position: absolute;
+    top: 400px;
+    opacity: 0.5;
+}
+
 footer {
     letter-spacing: 3.5px;
     color: white;
