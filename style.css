@@ -22,7 +22,7 @@ body {
     
 }
 
-.btn-iniciar {
+.btn-animais {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -33,6 +33,34 @@ body {
     height: 114px;
     left: 0;
     top: 20rem;
+    
+    /* Dark blue/dark-blue-300 */
+    
+    background: #0A3871;
+    border-radius: 24px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 22px;
+    display: flex;
+    justify-content: center;
+  
+  /* White */
+  
+    color: #FFFFFF;
+}
+
+.btn-comidas {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    
+    position: absolute;
+    width: 317px;
+    height: 114px;
+    left: 90px;
+    top: 90px;
     
     /* Dark blue/dark-blue-300 */
     

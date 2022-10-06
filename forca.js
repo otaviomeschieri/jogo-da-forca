@@ -1,5 +1,3 @@
-// Seletores
-let palavras = ['ALURA', 'FORCA', 'HTML', 'ORACLE', 'JAVASCRIPT', 'LOGICA', 'PROGRAMA', 'DESAFIO'];
 let tela = document.getElementById("forca").getContext("2d");
 let palavraSecreta = "";
 //let dica = "";
@@ -12,8 +10,8 @@ let teclas = document.getElementsByClassName("botao-teclado");
 
 document.getElementById("div-fim-de-jogo").style.display = "none";
 
-function escolherPalavraSecreta() {
-    let palavra = palavras[Math.floor(Math.random() * palavras.length)]
+function escolherPalavraSecreta(evento) {
+    let palavra = evento[Math.floor(Math.random() * evento.length)]
     palavraSecreta = palavra;
     //dica = palavra[1]
     console.log(palavraSecreta);
@@ -67,9 +65,24 @@ function adicionaAcertos() {
     //console.log(acertos);
 }
 
-function iniciaJogo() {
+function jogoAnimais() {
     document.getElementById("div-desaparece").style.display = 'none';
-    escolherPalavraSecreta();
+    escolherPalavraSecreta(sorteiaAnimal);
+    desenharCanvas();
+    desenharLinhas();
+    escreverLetraIncorreta();
+    //mostraDica();
+    //document.getElementById("teclado-virtual").style.display = "flex";
+
+    document.onkeydown = (e) => {
+        let letra = e.key.toUpperCase();
+        verificaLetraClicada(letra);
+    }    
+}
+
+function jogoComidas() {
+    document.getElementById("div-desaparece").style.display = 'none';
+    escolherPalavraSecreta(sorteiaComida);
     desenharCanvas();
     desenharLinhas();
     escreverLetraIncorreta();

@@ -14,10 +14,16 @@
     </header>
     <main>
         <section id="div-desaparece" class="botoes-home">
-            <a href="#forca">
-            <!-- Botão -->
-                <input class="btn-iniciar" type="submit" value="Iniciar Jogo" id="iniciar-jogo" onclick="iniciaJogo()">
-            </a>
+            <h1>Jogo da forca</h1>
+            <h2>Escolha uma categoria</h2>
+            <div class="btn-categorias">
+                <input class="btn-animais" type="submit" value="Animais" id="cat-animais" onclick="jogoAnimais()">
+                <input class="btn-comidas" type="submit" value="Comidas" id="cat-comidas" onclick="jogoComidas()">
+                <input class="btn-esportes" type="submit" value="Esportes" id="cat-esportes" onclick="jogoEsportes()">
+                <input class="btn-hobbies" type="submit" value="Hobbies" id="cat-hobbies" onclick="jogoHobbies()">
+                <input class="btn-profissoes" type="submit" value="Profissões" id="cat-profissoes" onclick="jogoProfissoes()">
+                <input class="btn-todas" type="submit" value="Todas as categorias" id="cat-todas" onclick="jogoTodas()">
+            </div>
         </section>
         <section id="div-aparece-forca" class="canvas">
             <!-- Canvas -->
@@ -49,6 +55,7 @@
     <!-- Links -->
     <script type="text/javascript" src="forca.js"></script>
     <script type="text/javascript" src="canvas.js"></script>
+    <script type="text/javascript" src="palavras.js"></script>
 
 </body>
 </html>
