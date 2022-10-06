@@ -60,18 +60,52 @@ function desenharCorda() {
     tela.closePath();
 }
 
-function desenharCabeça() {
-    tela.lineWidth = 8;
-    tela.lineCap = "round";
-    tela.lineJoin = "round";
-    tela.fillStyle = "#F3F5FC";
-    tela.strokeStyle = "#0A3871";
+function desenharCabeca() {
+    let cabeca = new Image();
+    cabeca.src = "./imagens/cabeca.png";
+    cabeca.addEventListener('load',() => {
+        tela.drawImage(cabeca,0,0)
+    })
+}
 
-    tela.beginPath();
-    tela.moveTo(870,100);
-    tela.lineTo(870,120);
-    tela.stroke();
-    tela.closePath();
+function desenharTronco() {
+    let tronco = new Image();
+    tronco.src = "./imagens/tronco.png";
+    tronco.addEventListener('load',() => {
+        tela.drawImage(tronco,50,50)
+    })
+}
+
+function desenharBracoEsquerdo() {
+    let bracoEsquerdo = new Image();
+    bracoEsquerdo.src = "./imagens/braco-esquerdo.png";
+    bracoEsquerdo.addEventListener('load',() => {
+        tela.drawImage(bracoEsquerdo,60,60)
+    })
+}
+
+function desenharBracoDireito() {
+    let bracoDireito = new Image();
+    bracoDireito.src = "./imagens/braco-direito.png";
+    bracoDireito.addEventListener('load',() => {
+        tela.drawImage(bracoDireito,80,80)
+    })
+}
+
+function desenharPernaEsquerda() {
+    let pernaEsquerda = new Image();
+    pernaEsquerda.src = "./imagens/perna-esquerda.png";
+    pernaEsquerda.addEventListener('load',() => {
+        tela.drawImage(pernaEsquerda,100,100)
+    })
+}
+
+function desenharPernaDireita() {
+    let pernaDireita = new Image();
+    pernaDireita.src = "./imagens/perna-direita.png";
+    pernaDireita.addEventListener('load',() => {
+        tela.drawImage(pernaDireita,40,40)
+    })
 }
 
 //Alterar com mensagem de FIM DE JOGO
@@ -99,4 +133,34 @@ function escreverLetraIncorreta(letra,erros) {
     tela.fillStyle = "#0A3871";
     tela.lineWidth = 6;
     tela.fillText(letra,520 + (40 * (10 - erros)),720,40);
+    desenharErros();
+}
+
+function desenharErros() {
+    if(erros === 7) {
+        desenharForca();
+    }
+    if(erros === 6) {
+        desenharCorda();
+    }
+    if(erros === 5) {
+        desenharCabeca();
+    }
+    if(erros === 4) {
+        desenharTronco();
+    }
+    if(erros === 3) {
+        desenharBracoEsquerdo();
+    }
+    if(erros === 2) {
+        desenharBracoDireito();
+    }
+    if(erros === 1) {
+        desenharPernaEsquerda();
+    }
+    if(erros === 0) {
+        desenharPernaDireita();
+        //document.getElementById("perdeu").style.display = "flex";
+        document.getElementById("mostra-palavra-secreta").innerHTML = "A palavra era " + palavraSecreta;
+    }
 }

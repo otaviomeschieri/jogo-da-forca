@@ -84,7 +84,13 @@ body {
 }
 
 #div-fim-de-jogo {
-    background: yellow;
+    display: flex;
+    width: 900px;
+    height: 500px;
+    color: red;
+    font-size: 40px;
+    font-weight: bold;
+    /*background-image: url("imagens/Rec.png");*/
     position: absolute;
     top: 400px;
     opacity: 0.5;
