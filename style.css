@@ -4,8 +4,11 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-    background: #F3F5FC;
+    font-family: 'Inter Tight', sans-serif;
+    background: #acacac;
+    background: linear-gradient(90deg,#acacac 0%, #d6e2d6 50%);
+    background: -webkit-linear-gradient(90deg,#acacac 0%, #d6e2d6 50%);
+    background: -moz-linear-gradient(90deg,#acacac 0%, #d6e2d6 50%);
 }
 
 .sublinhado {
@@ -22,20 +25,34 @@ body {
     
 }
 
-.btn-animais {
+#titulo {
+    position: relative;
+    right: 300px;
+    bottom: 10px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 70px;
+}
+
+#descricao {
+    position: relative;
+    right: 215px;
+    bottom: 40px;
+    letter-spacing: 2px;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.btn-animais, .btn-comidas, .btn-esportes, .btn-hobbies, .btn-profissoes, .btn-todas {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: stretch;
     padding: 24px;
-    
     position: absolute;
     width: 317px;
     height: 114px;
-    left: 0;
-    top: 20rem;
-    
-    /* Dark blue/dark-blue-300 */
-    
     background: #0A3871;
     border-radius: 24px;
     font-style: normal;
@@ -44,38 +61,38 @@ body {
     line-height: 22px;
     display: flex;
     justify-content: center;
-  
-  /* White */
-  
     color: #FFFFFF;
+    cursor: pointer;
+}
+
+.btn-animais {
+    right: 840px;
+    top: 300px;
 }
 
 .btn-comidas {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 24px;
-    
-    position: absolute;
-    width: 317px;
-    height: 114px;
-    left: 90px;
-    top: 90px;
-    
-    /* Dark blue/dark-blue-300 */
-    
-    background: #0A3871;
-    border-radius: 24px;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 22px;
-    display: flex;
-    justify-content: center;
-  
-  /* White */
-  
-    color: #FFFFFF;
+    right: 400px;
+    top: 300px;
+}
+
+.btn-esportes {
+    left: 290px;
+    top: 300px;
+}
+
+.btn-hobbies {
+    right: 840px;
+    top: 500px;
+}
+
+.btn-profissoes {
+    right: 400px;
+    top: 500px;
+}
+
+.btn-todas {
+    left: 290px;
+    top: 500px;
 }
 
 .logo {
@@ -127,9 +144,9 @@ body {
 footer {
     letter-spacing: 3.5px;
     color: white;
-  text-align: center;
-  background: black;
-  padding: 25px 0;
+    text-align: center;
+    background: black;
+    padding: 25px 0;
     
     border-top: 0.4px solid white;
 }
@@ -146,5 +163,6 @@ footer p {
 
 .links a {
     display: inline;
-  margin: 0 12px 0 12px;
+    margin: 0 12px 0 12px;
+    cursor: pointer;
 }

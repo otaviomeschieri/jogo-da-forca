@@ -6,10 +6,10 @@ function desenharCanvas() {
     tela.strokeStyle = "#0A3871";
 
     //Manipulação
-    tela.fillRect(0,0,1200,800);
+    tela.fillRect(0,0,1300,800);
     tela.beginPath();
-    tela.moveTo(650,500);
-    tela.lineTo(900,500);
+    tela.moveTo(400,450);
+    tela.lineTo(750,450);
     tela.stroke();
     tela.closePath();
 }
@@ -21,10 +21,10 @@ function desenharLinhas() {
     tela.fillStyle = "#F3F5FC";
     tela.strokeStyle = "#0A3871";
 
-    let largura = 600/palavraSecreta.length;
+    let largura = 800/palavraSecreta.length;
     for(let i = 0; i < palavraSecreta.length; i++) {
-        tela.moveTo(500+(largura*i),640);
-        tela.lineTo(550+(largura*i),640);
+        tela.moveTo(250+(largura*i),540);
+        tela.lineTo(300+(largura*i),540);
     }
 
     tela.stroke();
@@ -39,32 +39,19 @@ function desenharForca() {
     tela.strokeStyle = "#0A3871";
 
     tela.beginPath();
-    tela.moveTo(720,500);
-    tela.lineTo(720,100);
-    tela.lineTo(870,100);
-    tela.stroke();
-    tela.closePath();
-}
-
-function desenharCorda() {
-    tela.lineWidth = 8;
-    tela.lineCap = "round";
-    tela.lineJoin = "round";
-    tela.fillStyle = "#F3F5FC";
-    tela.strokeStyle = "#0A3871";
-
-    tela.beginPath();
-    tela.moveTo(870,100);
-    tela.lineTo(870,120);
+    tela.moveTo(470,500);
+    tela.lineTo(470,100);
+    tela.lineTo(620,100);
+    tela.lineTo(620,130);
     tela.stroke();
     tela.closePath();
 }
 
 function desenharCabeca() {
     let cabeca = new Image();
-    cabeca.src = "./imagens/cabeca.png";
+    cabeca.src = "./imagens/emoji02.png";
     cabeca.addEventListener('load',() => {
-        tela.drawImage(cabeca,0,0)
+        tela.drawImage(cabeca,560,115)
     })
 }
 
@@ -118,13 +105,22 @@ function desenharPernaDireita() {
 		tela.fill();
 	}*/
 
+
+function nomeDaCategoria(index) {
+    tela.font = "bold 64px Inter"
+    tela.lineCap = "round";
+    tela.fillStyle = "#000000";
+    tela.lineWidth = 6;
+    tela.fillText(categorias[index],200,120);
+}
+
 function escreverLetraCorreta(index) {
     tela.font = "bold 52px Inter"
     tela.lineCap = "round";
     tela.fillStyle = "#0A3871";
     tela.lineWidth = 6;
-    let largura = 600/palavraSecreta.length;
-    tela.fillText(palavraSecreta[index],510 + (largura * index),620);
+    let largura = 800/palavraSecreta.length;
+    tela.fillText(palavraSecreta[index],260 + (largura * index),620);
 }
 
 function escreverLetraIncorreta(letra,erros) {
@@ -132,16 +128,13 @@ function escreverLetraIncorreta(letra,erros) {
     tela.lineCap = "round";
     tela.fillStyle = "#0A3871";
     tela.lineWidth = 6;
-    tela.fillText(letra,520 + (40 * (10 - erros)),720,40);
+    tela.fillText(letra,270 + (40 * (10 - erros)),720,40);
     desenharErros();
 }
 
 function desenharErros() {
-    if(erros === 7) {
-        desenharForca();
-    }
     if(erros === 6) {
-        desenharCorda();
+        desenharForca();
     }
     if(erros === 5) {
         desenharCabeca();

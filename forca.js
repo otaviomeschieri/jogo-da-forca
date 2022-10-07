@@ -3,7 +3,7 @@ let palavraSecreta = "";
 //let dica = "";
 
 let letras = [];
-let erros = 8;
+let erros = 7;
 let acertos = 0;
 
 let teclas = document.getElementsByClassName("botao-teclado");
@@ -65,12 +65,29 @@ function adicionaAcertos() {
     //console.log(acertos);
 }
 
-function jogoAnimais() {
+function iniciarJogo(sorteia,index) {
+    document.getElementById("div-desaparece").style.display = 'none';
+    escolherPalavraSecreta(sorteia);
+    desenharCanvas();
+    desenharLinhas();
+    escreverLetraIncorreta();
+    nomeDaCategoria(index);
+    //mostraDica();
+    //document.getElementById("teclado-virtual").style.display = "flex";
+
+    document.onkeydown = (e) => {
+        let letra = e.key.toUpperCase();
+        verificaLetraClicada(letra);
+    }    
+}
+
+/*function jogoAnimais() {
     document.getElementById("div-desaparece").style.display = 'none';
     escolherPalavraSecreta(sorteiaAnimal);
     desenharCanvas();
     desenharLinhas();
     escreverLetraIncorreta();
+    nomeDaCategoria(0);
     //mostraDica();
     //document.getElementById("teclado-virtual").style.display = "flex";
 
@@ -86,6 +103,7 @@ function jogoComidas() {
     desenharCanvas();
     desenharLinhas();
     escreverLetraIncorreta();
+    nomeDaCategoria(1);
     //mostraDica();
     //document.getElementById("teclado-virtual").style.display = "flex";
 
@@ -93,7 +111,7 @@ function jogoComidas() {
         let letra = e.key.toUpperCase();
         verificaLetraClicada(letra);
     }    
-}
+}*/
 
 function reiniciar() {
     
@@ -102,7 +120,7 @@ function reiniciar() {
     limpaTeclas();
     
     iniciaJogo();
-    erros = 8;
+    erros = 7;
     acertos = 0;
 }
 

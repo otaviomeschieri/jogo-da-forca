@@ -5,29 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Jogo da Forca</title>
 </head>
 <body>
     <header>
-        <img src="/imagens/logo.svg" class="logo" alt="Logo">
+        <!-- <img src="/imagens/forca-icone.png" class="logo" alt="Logo"> -->
     </header>
     <main>
         <section id="div-desaparece" class="botoes-home">
-            <h1>Jogo da forca</h1>
-            <h2>Escolha uma categoria</h2>
+            <h1 id="titulo">Jogo da forca</h1>
+            <h2 id="descricao">Escolha uma categoria para jogar</h2>
             <div class="btn-categorias">
-                <input class="btn-animais" type="submit" value="Animais" id="cat-animais" onclick="jogoAnimais()">
-                <input class="btn-comidas" type="submit" value="Comidas" id="cat-comidas" onclick="jogoComidas()">
-                <input class="btn-esportes" type="submit" value="Esportes" id="cat-esportes" onclick="jogoEsportes()">
-                <input class="btn-hobbies" type="submit" value="Hobbies" id="cat-hobbies" onclick="jogoHobbies()">
-                <input class="btn-profissoes" type="submit" value="Profissões" id="cat-profissoes" onclick="jogoProfissoes()">
-                <input class="btn-todas" type="submit" value="Todas as categorias" id="cat-todas" onclick="jogoTodas()">
+                <input class="btn-animais" type="submit" value="Animais" id="cat-animais" onclick="iniciarJogo(sorteiaAnimal,0)">
+                <input class="btn-comidas" type="submit" value="Comidas" id="cat-comidas" onclick="iniciarJogo(sorteiaComida,1)">
+                <input class="btn-esportes" type="submit" value="Esportes" id="cat-esportes" onclick="iniciarJogo(sorteiaEsportes,2)">
+                <input class="btn-hobbies" type="submit" value="Hobbies" id="cat-hobbies" onclick="iniciarJogo(sorteiaHobbies,3)">
+                <input class="btn-profissoes" type="submit" value="Profissões" id="cat-profissoes" onclick="iniciarJogo(sorteiaProfissoes,4)">
+                <input class="btn-todas" type="submit" value="Todas as categorias" id="cat-todas" onclick="iniciarJogo(sorteiaTodas,5)">
             </div>
         </section>
         <section id="div-aparece-forca" class="canvas">
             <!-- Canvas -->
-            <canvas id="forca" height="860px" width="1200px"></canvas>
+            <canvas id="forca" height="860px" width="1300px"></canvas>
             <div class="sublinhado">
             </div>
         </section>
