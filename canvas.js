@@ -2,11 +2,9 @@ function desenharCanvas() {
     tela.lineWidth = 8;
     tela.lineCap = "round";
     tela.lineJoin = "round";
-    tela.fillStyle = "#F3F5FC";
     tela.strokeStyle = "#0A3871";
 
     //Manipulação
-    tela.fillRect(0,0,1300,800);
     tela.beginPath();
     tela.moveTo(400,450);
     tela.lineTo(750,450);

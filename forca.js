@@ -39,18 +39,19 @@ function verificaLetraClicada(letra) {
             for(let i = 0; i < palavraSecreta.length; i++) {
                 if(palavraSecreta[i] === letra) {
                     escreverLetraCorreta(i);
-                    //document.getElementById(letra).style.background = "green";
+                    // document.getElementById(letra).style.background = "green";
                     adicionaAcertos();
                     ganharJogo();
                 }
             }
         } else {
             adicionarLetraIncorreta();
-            //document.getElementById(letra).style.background = "red";
+            // document.getElementById(letra).style.background = "red";
             escreverLetraIncorreta(letra, erros);
             //DesenhaErro();
             perderJogo();
         }
+        document.getElementById(letra).style.transitionDuration = "1s";
         console.log(letras);
     }
 }
@@ -73,7 +74,7 @@ function iniciarJogo(sorteia,index) {
     escreverLetraIncorreta();
     nomeDaCategoria(index);
     //mostraDica();
-    //document.getElementById("teclado-virtual").style.display = "flex";
+    document.getElementById("teclado-virtual").style.display = "flex";
 
     document.onkeydown = (e) => {
         let letra = e.key.toUpperCase();

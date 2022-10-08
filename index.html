@@ -17,18 +17,56 @@
         <section id="div-desaparece" class="botoes-home">
             <h1 id="titulo">Jogo da forca</h1>
             <h2 id="descricao">Escolha uma categoria para jogar</h2>
-            <div class="btn-categorias">
-                <input class="btn-animais" type="submit" value="Animais" id="cat-animais" onclick="iniciarJogo(sorteiaAnimal,0)">
-                <input class="btn-comidas" type="submit" value="Comidas" id="cat-comidas" onclick="iniciarJogo(sorteiaComida,1)">
-                <input class="btn-esportes" type="submit" value="Esportes" id="cat-esportes" onclick="iniciarJogo(sorteiaEsportes,2)">
-                <input class="btn-hobbies" type="submit" value="Hobbies" id="cat-hobbies" onclick="iniciarJogo(sorteiaHobbies,3)">
-                <input class="btn-profissoes" type="submit" value="Profissões" id="cat-profissoes" onclick="iniciarJogo(sorteiaProfissoes,4)">
-                <input class="btn-todas" type="submit" value="Todas as categorias" id="cat-todas" onclick="iniciarJogo(sorteiaTodas,5)">
-            </div>
+            <ul class="categorias">
+                <li><button class="btn-animais" onclick="iniciarJogo(sorteiaAnimal,0)">Animais</button></li>
+                <li><button class="btn-comidas" onclick="iniciarJogo(sorteiaComida,1)">Comidas</button></li>
+                <li><button class="btn-esportes" onclick="iniciarJogo(sorteiaEsportes,2)">Esportes</button></li>
+                <li><button class="btn-hobbies" onclick="iniciarJogo(sorteiaHobbies,3)">Hobbies</button></li>
+                <li><button class="btn-profissoes" onclick="iniciarJogo(sorteiaProfissoes,4)">Profissões</button></li>
+                <li><button class="btn-todas" onclick="iniciarJogo(sorteiaTodas,5)">Todas as categorias</button></li>
+                <li><button class="btn-adicionar" onclick="adicionarPalavras()">Adicionar palavras</button></li>
+            </ul>
         </section>
         <section id="div-aparece-forca" class="canvas">
             <!-- Canvas -->
             <canvas id="forca" height="860px" width="1300px"></canvas>
+            <!-- Teclado -->
+            <div class="teclado" id="teclado-virtual">
+                <div class="linha-1">
+                    <button id="Q" class="botao-teclado" onclick="clicaLetra('Q')">q</button>
+                    <button id="W" class="botao-teclado" onclick="clicaLetra('W')">w</button>
+                    <button id="E" class="botao-teclado" onclick="clicaLetra('E')">e</button>
+                    <button id="R" class="botao-teclado" onclick="clicaLetra('R')">r</button>
+                    <button id="T" class="botao-teclado" onclick="clicaLetra('T')">t</button>
+                    <button id="Y" class="botao-teclado" onclick="clicaLetra('Y')">y</button>
+                    <button id="U" class="botao-teclado" onclick="clicaLetra('U')">u</button>
+                    <button id="I" class="botao-teclado" onclick="clicaLetra('I')">i</button>
+                    <button id="O" class="botao-teclado" onclick="clicaLetra('O')">o</button>
+                    <button id="P" class="botao-teclado" onclick="clicaLetra('P')">p</button>
+                </div>
+                <div class="linha-2">
+                    <button id="A" class="botao-teclado" onclick="clicaLetra('A')">a</button>
+                    <button id="S" class="botao-teclado" onclick="clicaLetra('S')">s</button>
+                    <button id="D" class="botao-teclado" onclick="clicaLetra('D')">d</button>
+                    <button id="F" class="botao-teclado" onclick="clicaLetra('F')">f</button>
+                    <button id="G" class="botao-teclado" onclick="clicaLetra('G')">g</button>
+                    <button id="H" class="botao-teclado" onclick="clicaLetra('H')">h</button>
+                    <button id="J" class="botao-teclado" onclick="clicaLetra('J')">j</button>
+                    <button id="K" class="botao-teclado" onclick="clicaLetra('K')">k</button>
+                    <button id="L" class="botao-teclado" onclick="clicaLetra('L')">l</button>
+                    <button id="Ç" class="botao-teclado" onclick="clicaLetra('Ç')">ç</button>
+                </div>
+                <div class="linha-3">
+                    <button id="Z" class="botao-teclado" onclick="clicaLetra('Z')">z</button>
+                    <button id="X" class="botao-teclado" onclick="clicaLetra('X')">x</button>
+                    <button id="C" class="botao-teclado" onclick="clicaLetra('C')">c</button>
+                    <button id="V" class="botao-teclado" onclick="clicaLetra('V')">v</button>
+                    <button id="B" class="botao-teclado" onclick="clicaLetra('B')">b</button>
+                    <button id="N" class="botao-teclado" onclick="clicaLetra('N')">n</button>
+                    <button id="M" class="botao-teclado" onclick="clicaLetra('M')">m</button>
+                </div>
+            
+            </div>
             <div class="sublinhado">
             </div>
         </section>
