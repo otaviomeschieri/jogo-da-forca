@@ -53,6 +53,8 @@ function verificaLetraClicada(letra) {
         }
         document.getElementById(letra).style.transitionDuration = "1s";
         console.log(letras);
+        document.getElementById(letra).style.transform = "scale(1.1)";
+        document.getElementById(letra).style.background = "gray";
     }
 }
 

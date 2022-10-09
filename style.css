@@ -189,13 +189,13 @@ body {
     width: 40px;
     text-transform: uppercase;
     padding: 10px;
-    margin: 0 3px;
+    margin: 3px 5px;
     border-radius: 10px;
 }
 
 .teclado button:hover {
    background: lightsalmon;
-   transform: scale(1.2);
+   transform: scale(1.1);
 }
 
 .botoes-home {
