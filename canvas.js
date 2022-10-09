@@ -59,6 +59,7 @@ function desenharForca(erros) {
         tela.lineTo(470,100);
         tela.lineTo(620,100);
         tela.lineTo(620,130);
+        tela.stroke();
     }
     // Cabeça
     if(erros === 5) {
@@ -81,23 +82,51 @@ function desenharForca(erros) {
     }
     // Perna esquerda
     if(erros === 3) {
-        tela.moveTo(850,389)
-        tela.lineTo(800,450)
+        tela.clearRect(560,115,690,233);
+        let cabeca = new Image();
+        cabeca.src = "./imagens/emoji04.png";
+        cabeca.addEventListener('load',() => {
+            tela.drawImage(cabeca,560,115);
+    })
+        tela.moveTo(620,332);
+        tela.lineTo(570,393);
+        tela.lineTo(655,408);
     }
     // Perna direita
     if(erros === 2) {
-        tela.moveTo(850,389)
-        tela.lineTo(890,450)
+        tela.clearRect(560,115,690,233);
+        let cabeca = new Image();
+        cabeca.src = "./imagens/emoji05.png";
+        cabeca.addEventListener('load',() => {
+            tela.drawImage(cabeca,560,115);
+    })
+        tela.moveTo(620,332);
+        tela.lineTo(660,393);
+        tela.lineTo(675,408);
     }
     // Braço esquerdo
     if(erros === 1) {
-        tela.moveTo(850,330)
-        tela.lineTo(800,389)
+        tela.clearRect(560,115,690,233);
+        let cabeca = new Image();
+        cabeca.src = "./imagens/emoji06.png";
+        cabeca.addEventListener('load',() => {
+            tela.drawImage(cabeca,560,115);
+    })
+        tela.moveTo(620,273);
+        tela.lineTo(570,332);
+        tela.lineTo(655,317);
     }
     // Braço direito
     if(erros === 0) {
-        tela.moveTo(850,330)
-        tela.lineTo(890,389)
+        tela.clearRect(560,115,690,233);
+        let cabeca = new Image();
+        cabeca.src = "./imagens/emoji07.png";
+        cabeca.addEventListener('load',() => {
+            tela.drawImage(cabeca,560,115);
+    })
+        tela.moveTo(620,273);
+        tela.lineTo(660,332);
+        tela.lineTo(675,317);
         document.getElementById("perdeu").style.display = "flex";
         document.getElementById("mostra-palavra-secreta").innerHTML = "A palavra era " + palavraSecreta;
     }
