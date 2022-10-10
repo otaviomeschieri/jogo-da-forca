@@ -47,92 +47,100 @@ function desenharLinhas() {
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+function desenharRosto(imagem) {
+    let rosto = new Image();
+    rosto.onload = function() {
+        tela.drawImage(rosto,560,115);
+    }
+    rosto.src = imagem;
+}  
+
 function desenharForca(erros) {
-    tela.lineWidth = 8
-    tela.lineCap = "round"
-    tela.lineJoin = "round"
-    tela.strokeStyle = "#0A3871"
+    tela.lineWidth = 8;
+    tela.lineCap = "round";
+    tela.lineJoin = "round";
+    tela.strokeStyle = "#0A3871";
 
     // Forca
     if(erros === 6) { 
         tela.moveTo(470,500);
         tela.lineTo(470,100);
-        tela.lineTo(620,100);
+        tela.moveTo(620,100);
+        tela.lineTo(470,100);
+        tela.moveTo(620,100);
         tela.lineTo(620,130);
-        tela.stroke();
     }
     // Cabeça
     if(erros === 5) {
-        let cabeca = new Image();
-        cabeca.src = "./imagens/emoji02.png";
-        cabeca.addEventListener('load',() => {
-            tela.drawImage(cabeca,560,115);
-    })
+        tela.stroke();
+        let emoji02 = new Image();
+        emoji02.addEventListener('load',() => {
+            tela.drawImage(emoji02,560,115);
+        },false);
+        emoji02.src = "./imagens/emoji02.png";
+        // desenharRosto("./imagens/emoji02.png");
     }
     // Tronco
     if(erros === 4) {
-        tela.clearRect(560,115,684,233);
-        let cabeca = new Image();
-        cabeca.src = "./imagens/emoji03.png";
-        cabeca.addEventListener('load',() => {
-            tela.drawImage(cabeca,560,115);
-    })
-        tela.moveTo(620,222);
-        tela.lineTo(620,332);
+        // let emoji03 = new Image();
+        // emoji03.addEventListener('load',() => {
+        //     tela.drawImage(emoji03,560,115);
+        // },false);
+        // emoji03.src = "./imagens/emoji03.png";
+        tela.moveTo(620,212);
+        tela.lineTo(620,320);
     }
     // Perna esquerda
     if(erros === 3) {
-        tela.clearRect(560,115,690,233);
-        let cabeca = new Image();
-        cabeca.src = "./imagens/emoji04.png";
-        cabeca.addEventListener('load',() => {
-            tela.drawImage(cabeca,560,115);
-    })
-        tela.moveTo(620,332);
-        tela.lineTo(570,393);
-        tela.lineTo(655,408);
+    //     tela.clearRect(560,115,690,233);
+    //     let emoji04 = new Image();
+    //     emoji04.src = "./imagens/emoji04.png";
+    //     emoji04.addEventListener('load',() => {
+    //         tela.drawImage(emoji04,560,115);
+    // })
+        tela.moveTo(620,322);
+        tela.lineTo(570,383);
     }
     // Perna direita
     if(erros === 2) {
-        tela.clearRect(560,115,690,233);
-        let cabeca = new Image();
-        cabeca.src = "./imagens/emoji05.png";
-        cabeca.addEventListener('load',() => {
-            tela.drawImage(cabeca,560,115);
-    })
-        tela.moveTo(620,332);
-        tela.lineTo(660,393);
-        tela.lineTo(675,408);
+    //     tela.clearRect(560,115,690,233);
+    //     let emoji05 = new Image();
+    //     emoji05.src = "./imagens/emoji05.png";
+    //     emoji05.addEventListener('load',() => {
+    //         tela.drawImage(emoji05,560,115);
+    // })
+        tela.moveTo(620,322);
+        tela.lineTo(660,383);
     }
     // Braço esquerdo
     if(erros === 1) {
-        tela.clearRect(560,115,690,233);
-        let cabeca = new Image();
-        cabeca.src = "./imagens/emoji06.png";
-        cabeca.addEventListener('load',() => {
-            tela.drawImage(cabeca,560,115);
-    })
-        tela.moveTo(620,273);
-        tela.lineTo(570,332);
-        tela.lineTo(655,317);
+    //     tela.clearRect(560,115,690,233);
+    //     let emoji06 = new Image();
+    //     emoji06.src = "./imagens/emoji06.png";
+    //     emoji06.addEventListener('load',() => {
+    //         tela.drawImage(emoji06,560,115);
+    // })
+        tela.moveTo(620,263);
+        tela.lineTo(570,322);
     }
     // Braço direito
     if(erros === 0) {
-        tela.clearRect(560,115,690,233);
-        let cabeca = new Image();
-        cabeca.src = "./imagens/emoji07.png";
-        cabeca.addEventListener('load',() => {
-            tela.drawImage(cabeca,560,115);
-    })
-        tela.moveTo(620,273);
-        tela.lineTo(660,332);
-        tela.lineTo(675,317);
-        document.getElementById("perdeu").style.display = "flex";
+    //     tela.clearRect(560,115,690,233);
+    //     let cabeca = new Image();
+    //     cabeca.src = "./imagens/emoji07.png";
+    //     cabeca.addEventListener('load',() => {
+    //         tela.drawImage(cabeca,560,115);
+    // })
+        tela.moveTo(620,263);
+        tela.lineTo(660,322);
+        // document.getElementById("perdeu").style.display = "flex";
         document.getElementById("mostra-palavra-secreta").innerHTML = "A palavra era " + palavraSecreta;
     }
     tela.stroke()
     tela.closePath()
   }
+
+  
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -247,3 +255,39 @@ function escreverLetraIncorreta(letra,erros) {
 //         document.getElementById("mostra-palavra-secreta").innerHTML = "A palavra era " + palavraSecreta;
 //     }
 // }
+
+
+
+
+
+
+function exibirDerrota() {
+    tela.font = ' bold 42px Inter';
+    tela.lineWidth=6;
+    tela.lineCap="round";
+    tela.lineJoin="round";
+    tela.fillStyle="red";
+    tela.fillText("Fim de jogo!",930,320);
+}
+
+function exibirVitoria() {
+    // if(acertos == palavraSecreta.length) {
+    //     letras = [];
+    //     tela.clearRect(0,0,1300,860);
+        
+    // }
+    tela.fill = "red";
+    tela.font = 'bold 42px Inter';
+    tela.lineWidth=6;
+    tela.lineCap="round";
+    tela.lineJoin="round";
+    tela.fillStyle="green";
+    tela.fillText("Ganhou,",950,320);
+    tela.fillText("Parabéns!",930,360);
+
+
+
+
+
+    // setTimeout( recarregar , 1000);
+}
