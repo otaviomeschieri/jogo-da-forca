@@ -3,6 +3,7 @@
 // let botonNuevoJuegoDesaparecido = document.getElementById("btn-novo-jogo").style.display = "none"
 // let divAgregarPalavra = document.getElementById("adicionar-palavra").style.display = 'none';
 let btnNovoJogo = document.getElementById("btn-novo-jogo");
+let btnCancelar = document.getElementById("btn-cancelar");
 let tela = document.getElementById("forca").getContext("2d");
 let palavraSecreta = "";
 let letras = [];
@@ -29,6 +30,11 @@ document.getElementById("div-fim-de-jogo").style.display = "none";
 
 // atualiza a tela quando o usuário clica em "novo jogo"
 btnNovoJogo.addEventListener("click", function () {
+  location.reload();
+});
+
+// atualiza a tela quando o usuário clica em "cancelar"
+btnCancelar.addEventListener("click", function () {
   location.reload();
 });
 
