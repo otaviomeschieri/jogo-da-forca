@@ -3,14 +3,14 @@
 // let botonNuevoJuegoDesaparecido = document.getElementById("btn-novo-jogo").style.display = "none"
 // let divAgregarPalavra = document.getElementById("adicionar-palavra").style.display = 'none';
 let btnNovoJogo = document.getElementById("btn-novo-jogo");
-let btnCancelar = document.getElementById("btn-cancelar");
+// let btnTelaInicial = document.getElementById("btn-tela-inicial");
 let tela = document.getElementById("forca").getContext("2d");
 let palavraSecreta = "";
 let letras = [];
 let palavraCorreta = "";
-let erros = 7;
+let erros = 8;
 let letrasIncorretas = [];
-let numeroDeErros = 7
+let numeroDeErros = 8;
 let letraEscolhida = [];
 
 document.getElementById("div-fim-de-jogo").style.display = "none";
@@ -35,10 +35,10 @@ btnNovoJogo.addEventListener("click", function () {
   location.reload();
 });
 
-// atualiza a tela quando o usuário clica em "cancelar"
-btnCancelar.addEventListener("click", function () {
-  location.reload();
-});
+// atualiza a tela quando o usuário clica em "tela inicial"
+// btnTelaInicial.addEventListener("click", function () {
+//   location.reload();
+// });
 
 //faz o sorteio da palavra
 function escolherPalavraSecreta(evento) {
@@ -77,10 +77,11 @@ function verificarFimDeJogo(letra) {
     letrasIncorretas.push(letra);
     
     //valida se o usuário cometeu o número máximo de erros, para poder exibir a mesagem de fim de jogo
-    if (letrasIncorretas.length > numeroDeErros) {
-      exibirDerrota()
-    }
-    else if(letraEscolhida.length < palavraSecreta.length) {
+    // if (letrasIncorretas.length > numeroDeErros) {
+    //   exibirDerrota()
+    // }
+    // else
+    if(letraEscolhida.length < palavraSecreta.length) {
       adicionarLetraIncorreta(letra)
       escreverLetraIncorreta(letra, erros)
     }
@@ -116,14 +117,14 @@ function salvarPalavra() {
   //captura o que foi digitado
   let novaPalavra = document.getElementById("input-nova-palavra").value;
 
-  let quantidadeMinima = document.getElementById("input-nova-palavra").minLength;
+  // let quantidadeMinima = document.getElementById("input-nova-palavra").minLength;
 
   // Alerta de quantidade mínima
-  if(quantidadeMinima > document.getElementById("input-nova-palavra").innerHTML) {
-    alert("A palavra deve ter no mínimo 4 caracteres");
+  // if(quantidadeMinima > document.getElementById("input-nova-palavra").innerHTML) {
+  //   alert("A palavra deve ter no mínimo 4 caracteres");
   // } else {
   //   alert("Ok");
-  }
+  // }
 
   // inclui a palavra digitada no array de palavras a serem sorteadas
   if(novaPalavra !== ""){
@@ -131,8 +132,8 @@ function salvarPalavra() {
     alert("A palavra digitada foi salva");
   
     // faz a tela de adicionar palavra desaparecer
-    // document.getElementById("adicionar-palavra").style.display = "none";
-    // iniciarJogo();
+    document.getElementById("adicionar-palavra").style.display = "none";
+    iniciarJogo(sorteiaTodas,5)
   }
   else{
     alert("Nenhuma palavra foi digitada");
@@ -184,8 +185,8 @@ function iniciarJogo(sorteia,index) {
         }
       }
     }
-    else {
-      alert("Você atingiu o limíte de letras incorretas");
-    }
-  };
+    // else {
+    //   alert("Você atingiu o limíte de letras incorretas");
+    // }
+  }
 }

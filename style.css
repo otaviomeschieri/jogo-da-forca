@@ -5,25 +5,17 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter Tight', sans-serif;
-    background: #acacac;
-    background: linear-gradient(90deg,#acacac 0%, #d6e2d6 50%);
-    background: -webkit-linear-gradient(90deg,#acacac 0%, #d6e2d6 50%);
-    background: -moz-linear-gradient(90deg,#acacac 0%, #d6e2d6 50%);
+    background: #00c8ff;
+    background: radial-gradient(circle farthest-corner at center center, #00c8ff 0%, #007f9d 80%);
+    background: -webkit-radial-gradient(circle farthest-corner at center center, #00c8ff 0%, #007f9d 80%);
+    background: -moz-radial-gradient(circle farthest-corner at center center, #00c8ff 0%, #007f9d 80%);
 }
 
-.sublinhado {
-    display: flex;
-}
-
-.desenharLinhas {
-    border-bottom: solid 4px #0A3871;
+/* .desenharLinhas {
+    border-bottom: solid 4px #fbff1c;
     width: 30px;
     margin: 10px;
-}
-
-.esconderLetra {
-    
-}
+} */
 
 #titulo {
     font-family: 'Inter Tight', sans-serif;
@@ -207,7 +199,7 @@ body {
     justify-content: center; 
 }
 
-.btn-cancelar {
+.btn-tela-inicial {
     display: flex;
     flex-direction: row;
     align-items: flex-start;

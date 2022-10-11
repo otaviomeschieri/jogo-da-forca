@@ -61,12 +61,18 @@ function desenharForca(erros) {
     tela.lineJoin = "round";
     tela.strokeStyle = "#0A3871";
 
-    // Forca
-    if(erros === 6) { 
+    // Forca-lateral
+    if(erros === 8) { 
         tela.moveTo(470,500);
         tela.lineTo(470,100);
+    }
+    // Forca-teto
+    if(erros === 7) { 
         tela.moveTo(620,100);
         tela.lineTo(470,100);
+    }
+    // Forca-corda
+    if(erros === 6) { 
         tela.moveTo(620,100);
         tela.lineTo(620,130);
     }
@@ -134,7 +140,8 @@ function desenharForca(erros) {
         tela.moveTo(620,263);
         tela.lineTo(660,322);
         // document.getElementById("perdeu").style.display = "flex";
-        document.getElementById("mostra-palavra-secreta").innerHTML = "A palavra era " + palavraSecreta;
+        // document.getElementById("mostra-palavra-secreta").innerHTML = "A palavra era " + palavraSecreta;
+        exibirDerrota();
     }
     tela.stroke()
     tela.closePath()
@@ -268,7 +275,9 @@ function exibirDerrota() {
     tela.lineJoin="round";
     tela.fillStyle="red";
     tela.fillText("Fim de jogo!",930,320);
+    tela.fillText("A palavra era " + palavraSecreta,930,420);
 }
+// document.getElementById("mostra-palavra-secreta").innerHTML = "A palavra era " + palavraSecreta;
 
 function exibirVitoria() {
     // if(acertos == palavraSecreta.length) {
