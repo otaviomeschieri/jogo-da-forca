@@ -22,11 +22,13 @@ document.getElementById("div-fim-de-jogo").style.display = "none";
 //   iniciarJogo();
 // }
 
+document.getElementById("adicionar-palavra").style.display = "none";
+document.getElementById("btn-novo-jogo").style.display = "none";
+
 // captura o id "btn-guardar", salva a palavra adicionada
-// document.getElementById("btn-salvar").onclick = () => {
-//   salvarPalavra();
- 
-// }
+document.getElementById("btn-salvar").onclick = () => {
+  salvarPalavra();
+}
 
 // atualiza a tela quando o usuário clica em "novo jogo"
 btnNovoJogo.addEventListener("click", function () {
@@ -44,7 +46,7 @@ function escolherPalavraSecreta(evento) {
   palavraSecreta = palavra;
   console.log(palavraSecreta);
   return palavra;
-  }
+}
 
 // verifica qual foi a letra clicada
 function verificarLetraClicada(key) {
@@ -103,7 +105,7 @@ function verificarLetra(keyCode) {
 }
 
 // faz com que os botões da tela de home desapareçam e mostra a tela de adicionar palavra
-function mostrarTelaAdicionarPalavra() {
+function mostrarTelaAdicionarPalavras() {
   document.getElementById("div-desaparece").style.display = "none";
   document.getElementById("adicionar-palavra").style.display = "block";
 }
@@ -114,14 +116,23 @@ function salvarPalavra() {
   //captura o que foi digitado
   let novaPalavra = document.getElementById("input-nova-palavra").value;
 
+  let quantidadeMinima = document.getElementById("input-nova-palavra").minLength;
+
+  // Alerta de quantidade mínima
+  if(quantidadeMinima > document.getElementById("input-nova-palavra").innerHTML) {
+    alert("A palavra deve ter no mínimo 4 caracteres");
+  // } else {
+  //   alert("Ok");
+  }
+
   // inclui a palavra digitada no array de palavras a serem sorteadas
   if(novaPalavra !== ""){
-    palavras.push(novaPalavra.toUpperCase());
+    sorteiaTodas.push(novaPalavra.toUpperCase());
     alert("A palavra digitada foi salva");
   
     // faz a tela de adicionar palavra desaparecer
-    document.getElementById("adicionar-palavra").style.display = "none";
-    iniciarJogo();
+    // document.getElementById("adicionar-palavra").style.display = "none";
+    // iniciarJogo();
   }
   else{
     alert("Nenhuma palavra foi digitada");

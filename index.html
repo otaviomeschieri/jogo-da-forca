@@ -14,6 +14,7 @@
         <!-- <img src="/imagens/forca-icone.png" class="logo" alt="Logo"> -->
     </header>
     <main>
+        <!-- TELA INICIAL -->
         <section id="div-desaparece" class="botoes-home">
             <h1 id="titulo">Jogo da forca</h1>
             <h2 id="descricao">Escolha uma categoria para jogar</h2>
@@ -24,9 +25,25 @@
                 <li><button class="btn-hobbies" onclick="iniciarJogo(sorteiaHobbies,3)">Hobbies</button></li>
                 <li><button class="btn-profissoes" onclick="iniciarJogo(sorteiaProfissoes,4)">Profissões</button></li>
                 <li><button class="btn-todas" onclick="iniciarJogo(sorteiaTodas,5)">Todas as categorias</button></li>
-                <li><button class="btn-adicionar" onclick="adicionarPalavras()">Adicionar palavras</button></li>
+                <li><button class="btn-adicionar" onclick="mostrarTelaAdicionarPalavras()">Adicionar palavras</button></li>
             </ul>
         </section>
+        <!-- TELA ADICIONAR PALAVRAS -->
+        <section>
+            <div id="adicionar-palavra" class="adicionar-palavra">
+                <input class="text-input" type="text" id="input-nova-palavra" minlength="4" maxlength="10" placeholder="Escreva uma palavra">
+                <div class="avisos">
+                    <img src="/imagens/!.png" class="img-alerta">
+                    <label for="input-texto"> Entre 4 e 10 caracteres</label>
+                </div>
+                <div class="div-botoes">
+                    <button class="btn-salvar" id="btn-salvar">Salvar</button>
+                    <button class="btn-cancelar" id="btn-cancelar">Cancelar</button>
+                    <button class="btn-iniciar" onclick="iniciarJogo(sorteiaTodas,5)">Iniciar jogo - Todas as categorias</button>
+                </div>
+            </div>
+        </section>
+        <!-- TECLADO -->
         <section id="div-aparece-forca" class="canvas">
             <!-- Canvas -->
             <canvas id="forca" height="860px" width="1300px"></canvas>
@@ -67,9 +84,8 @@
                 </div>
             
             </div>
-            <div class="sublinhado">
-            </div>
         </section>
+        <!-- FIM DE JOGO -->
         <section id="div-fim-de-jogo">
             <div id="perdeu">
                 <p>Você perdeu</p>
@@ -81,6 +97,7 @@
                 <p>Você ganhou</p>
             </div>
         </section>
+        <!-- BOTÃO NOVO JOGO -->
         <section class="novo-jogo">
             <button class="btn-novo-jogo" id="btn-novo-jogo">Novo Jogo</button>
         </section>
