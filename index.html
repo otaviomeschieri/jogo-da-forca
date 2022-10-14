@@ -5,19 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Jogo da Forca</title>
 </head>
 <body>
     <header>
         <!-- <img src="/imagens/forca-icone.png" class="logo" alt="Logo"> -->
+        <section id="div-titulo" class="div-titulo">
+            <h1 id="titulo">Jogo da forca</h1>
+            <h2 id="descricao">Escolha uma categoria para jogar</h2>
+        </section>
     </header>
     <main>
         <!-- TELA INICIAL -->
         <section id="div-desaparece" class="botoes-home">
-            <h1 id="titulo">Jogo da forca</h1>
-            <h2 id="descricao">Escolha uma categoria para jogar</h2>
+            <!-- <h1 id="titulo">Jogo da forca</h1>
+            <h2 id="descricao">Escolha uma categoria para jogar</h2> -->
             <ul class="categorias">
                 <li><button class="btn-animais" onclick="iniciarJogo(sorteiaAnimal,0)">Animais</button></li>
                 <li><button class="btn-comidas" onclick="iniciarJogo(sorteiaComida,1)">Comidas</button></li>
@@ -43,7 +47,6 @@
                 </div>
             </div>
         </section>
-        <!-- TECLADO -->
         <section id="div-aparece-forca" class="canvas">
             <!-- Canvas -->
             <canvas id="forca" height="860px" width="1300px"></canvas>
@@ -82,21 +85,18 @@
                     <button id="N" class="botao-teclado" onclick="clicaLetra('N')">n</button>
                     <button id="M" class="botao-teclado" onclick="clicaLetra('M')">m</button>
                 </div>
-            
             </div>
         </section>
         <!-- FIM DE JOGO -->
-        <section id="div-fim-de-jogo">
+        <!-- <section id="div-fim-de-jogo">
             <div id="perdeu">
                 <p>Você perdeu</p>
                 <p id="mostra-palavra-secreta"></p>
-                <!-- ADICIONAR IMAGEM DE FIM DE JOGO-->
-                <img src="">
             </div>
             <div id="ganhou">
                 <p>Você ganhou</p>
             </div>
-        </section>
+        </section> -->
         <!-- BOTÃO NOVO JOGO -->
         <section class="novo-jogo">
             <button class="btn-novo-jogo" id="btn-novo-jogo">Novo Jogo</button>

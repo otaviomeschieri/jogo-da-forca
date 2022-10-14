@@ -13,7 +13,9 @@ let letrasIncorretas = [];
 let numeroDeErros = 8;
 let letraEscolhida = [];
 
-document.getElementById("div-fim-de-jogo").style.display = "none";
+// document.getElementById("div-fim-de-jogo").style.display = "none";
+
+document.onmousedown = false;
 
 //eventos
 
@@ -107,6 +109,7 @@ function verificarLetra(keyCode) {
 
 // faz com que os botões da tela de home desapareçam e mostra a tela de adicionar palavra
 function mostrarTelaAdicionarPalavras() {
+  document.getElementById("div-titulo").style.display = "none";
   document.getElementById("div-desaparece").style.display = "none";
   document.getElementById("adicionar-palavra").style.display = "block";
 }
@@ -144,6 +147,7 @@ function salvarPalavra() {
 function iniciarJogo(sorteia,index) {
 
   // faz com que os botões da tela home desapareçam
+  document.getElementById("div-titulo").style.display = "none";
   document.getElementById("div-desaparece").style.display = "none";
 
   //chama a função que desenha o canva

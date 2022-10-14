@@ -12,7 +12,7 @@ function desenharCanvas() {
     tela.closePath();
 }
 
-function desenharLinhas() {
+function desenharLinhas(index,letra,erros) {
     tela.lineWidth = 6;
     tela.lineCap = "round";
     tela.lineJoin = "round";
@@ -24,6 +24,8 @@ function desenharLinhas() {
         tela.moveTo(250+(largura*i),540);
         tela.lineTo(300+(largura*i),540);
     }
+    escreverLetraCorreta(index);
+    escreverLetraIncorreta(letra,erros);
 
     tela.stroke();
     tela.closePath();
@@ -46,14 +48,6 @@ function desenharLinhas() {
 // }
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-function desenharRosto(imagem) {
-    let rosto = new Image();
-    rosto.onload = function() {
-        tela.drawImage(rosto,560,115);
-    }
-    rosto.src = imagem;
-}  
 
 function desenharForca(erros) {
     tela.lineWidth = 8;
@@ -78,13 +72,11 @@ function desenharForca(erros) {
     }
     // Cabeça
     if(erros === 5) {
-        tela.stroke();
         let emoji02 = new Image();
         emoji02.addEventListener('load',() => {
-            tela.drawImage(emoji02,560,115);
-        },false);
+            tela.drawImage(emoji02,560,130,78,74);
+        });
         emoji02.src = "./imagens/emoji02.png";
-        // desenharRosto("./imagens/emoji02.png");
     }
     // Tronco
     if(erros === 4) {
@@ -93,7 +85,7 @@ function desenharForca(erros) {
         //     tela.drawImage(emoji03,560,115);
         // },false);
         // emoji03.src = "./imagens/emoji03.png";
-        tela.moveTo(620,212);
+        tela.moveTo(620,222);
         tela.lineTo(620,320);
     }
     // Perna esquerda
@@ -211,20 +203,30 @@ function desenharForca(erros) {
 
 
 function nomeDaCategoria(index) {
-    tela.font = "bold 64px Inter"
+    tela.font = "bold 64px Source Code Pro";
     tela.lineCap = "round";
     tela.fillStyle = "#000000";
     tela.lineWidth = 6;
-    tela.fillText(categorias[index],200,120);
+    tela.textAlign = "center";
+
+    let categoria = index;
+    
+    if(categoria < 5) {
+        tela.fillText("Categoria: " + categorias[index],650,120);
+    } else {
+        tela.fillText(categorias[index],650,120);
+    }
+    // tela.fillText(categorias[index],200,120);
 }
 
 function escreverLetraCorreta(index) {
-    tela.font = "bold 52px Inter"
+    tela.font = "bold 52px Inter";
+    tela.textBaseline = "bottom";
     tela.lineCap = "round";
     tela.fillStyle = "#0A3871";
     tela.lineWidth = 6;
     let largura = 800/palavraSecreta.length;
-    tela.fillText(palavraSecreta[index],260 + (largura * index),620);
+    tela.fillText(palavraSecreta[index],273 + (largura * index),540);
 }
 
 function escreverLetraIncorreta(letra,erros) {
