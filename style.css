@@ -5,13 +5,12 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter Tight', sans-serif;
+    font-family: 'Source Code Pro', monospace;
     background: #00c8ff;
     background: radial-gradient(circle farthest-corner at center center, #00c8ff 0%, #007f9d 80%);
     background: -webkit-radial-gradient(circle farthest-corner at center center, #00c8ff 0%, #007f9d 80%);
     background: -moz-radial-gradient(circle farthest-corner at center center, #00c8ff 0%, #007f9d 80%);
 }
-
-/* font-family: 'Source Code Pro', monospace; */
 
 /* .desenharLinhas {
     border-bottom: solid 4px #fbff1c;
@@ -84,37 +83,37 @@ body {
 }
 
 .btn-animais {
-    background-image: url("/imagens/animais.png");
+    background-image: url("./imagens/animais.png");
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .btn-comidas {
-    background-image: url("/imagens/comidas.png");
+    background-image: url("./imagens/comidas.png");
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .btn-esportes {
-    background-image: url("/imagens/esportes.png");
+    background-image: url("./imagens/esportes.png");
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .btn-hobbies {
-    background-image: url("/imagens/hobbies.png");
+    background-image: url("./imagens/hobbies.png");
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .btn-profissoes {
-    background-image: url("/imagens/profissoes.png");
+    background-image: url("./imagens/profissoes.png");
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .btn-todas {
-    background-image: url("/imagens/todas.png");
+    background-image: url("./imagens/todas.png");
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -155,37 +154,37 @@ body {
 }
 
 .btn-animais:hover {
-    background-image: url("/imagens/animais-transparente.png");
+    background-image: url("./imagens/animais-transparente.png");
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .btn-comidas:hover {
-    background-image: url("/imagens/comidas-transparente.png");
+    background-image: url("./imagens/comidas-transparente.png");
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .btn-esportes:hover {
-    background-image: url("/imagens/esportes-transparente.png");
+    background-image: url("./imagens/esportes-transparente.png");
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .btn-hobbies:hover {
-    background-image: url("/imagens/hobbies-transparente.png");
+    background-image: url("./imagens/hobbies-transparente.png");
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .btn-profissoes:hover {
-    background-image: url("/imagens/profissoes-transparente.png");
+    background-image: url("./imagens/profissoes-transparente.png");
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .btn-todas:hover {
-    background-image: url("/imagens/todas-transparente.png");
+    background-image: url("./imagens/todas-transparente.png");
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -420,6 +419,7 @@ body {
 }
 
 footer {
+    font-family: 'Inter Tight', sans-serif;
     letter-spacing: 3.5px;
     color: white;
     text-align: center;
@@ -442,4 +442,148 @@ footer p {
     display: inline;
     margin: 0 12px 0 12px;
     cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+	/* .caixa, .principal, .conteudo-beneficios, .mapa-conteudo, .video {
+		width: auto;
+	}
+
+	h1 {
+		text-align: center;
+	}
+
+	nav {
+		position: static;
+	}
+
+	.lista-beneficios, .imagem-beneficios {
+		width: 100%;
+	} */
+    
+    #titulo {
+        font-family: 'Inter Tight', sans-serif;
+        font-size: 80px;
+        letter-spacing: 6px;
+        text-transform: uppercase;
+        text-align: center;
+        padding-top: 30px;
+    }
+    
+    #descricao {
+        font-family: 'Inter Tight', sans-serif;
+        font-size: 27px;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        text-align: center;
+        position: relative;
+        bottom: 20px;
+        padding-top: 20px;
+    }
+
+    .categorias {
+        position: absolute;
+        width: auto;
+        /* margin: 0 auto; */
+        padding-top: 50px;
+        /* position: absolute; */
+        /* justify-content: center; */
+        text-align: center;
+        height: 570px;
+    }
+    
+    .categorias li {
+        list-style-type: none;
+        /* flex-wrap: wrap; */
+        justify-content: space-around;
+        /* display: flex; */
+        /* text-align: center; */
+        align-content: space-between;
+        /* position: absolute; */
+        display: inline-block;
+        text-align: center;
+        /* width: 30%; */
+        /* vertical-align: top; */
+        /* margin: 0 1.5%; */
+        padding: 40px;
+    }
+    
+    .btn-animais, .btn-comidas, .btn-esportes, .btn-hobbies, .btn-profissoes, .btn-todas {
+        width: 330px;
+        height: 150px;
+        border-radius: 40px;
+        font-weight: 600;
+        font-size: 24px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        line-height: 22px;
+        cursor: pointer;
+        background-color: #fffce8;
+        color: #000000;
+        transition: 400ms;
+        border: solid #000000;
+    }
+    
+    .btn-animais {
+        background-image: url("./imagens/animais.png");
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    .btn-comidas {
+        background-image: url("./imagens/comidas.png");
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    .btn-esportes {
+        background-image: url("./imagens/esportes.png");
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    .btn-hobbies {
+        background-image: url("./imagens/hobbies.png");
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    .btn-profissoes {
+        background-image: url("./imagens/profissoes.png");
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    .btn-todas {
+        background-image: url("./imagens/todas.png");
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    .btn-adicionar {
+        display: flex;
+        display: inline-block;
+        /* flex-direction: row; */
+        /* align-items: stretch; */
+        /* padding: 28px; */
+        /* position: absolute; */
+        width: 600px;
+        height: 70px;
+        background: #073468;
+        border-radius: 40px;
+        font-weight: 600;
+        font-size: 20px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        line-height: 22px;
+        /* display: flex; */
+        /* justify-content: center; */
+        color: #ffffff;
+        cursor: pointer;
+        margin-top: 30px;
+        transition: 400ms;
+    }
+    
+    
 }

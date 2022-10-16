@@ -4,10 +4,10 @@ function desenharCanvas() {
     tela.lineJoin = "round";
     tela.strokeStyle = "#0A3871";
 
-    //Manipulação
+    //Base da forca
     tela.beginPath();
-    tela.moveTo(400,450);
-    tela.lineTo(750,450);
+    tela.moveTo(100,450);
+    tela.lineTo(450,450);
     tela.stroke();
     tela.closePath();
 }
@@ -55,17 +55,14 @@ function desenharForca(erros) {
     tela.lineJoin = "round";
     tela.strokeStyle = "#0A3871";
 
-    // Forca-lateral
-    if(erros === 8) { 
+    // Forca
+    if(erros === 7) { 
         tela.moveTo(470,500);
         tela.lineTo(470,100);
-    }
-    // Forca-teto
-    if(erros === 7) { 
         tela.moveTo(620,100);
         tela.lineTo(470,100);
     }
-    // Forca-corda
+    // Forca
     if(erros === 6) { 
         tela.moveTo(620,100);
         tela.lineTo(620,130);
@@ -220,7 +217,7 @@ function nomeDaCategoria(index) {
 }
 
 function escreverLetraCorreta(index) {
-    tela.font = "bold 52px Inter";
+    tela.font = "bold 52px Source Code Pro";
     tela.textBaseline = "bottom";
     tela.lineCap = "round";
     tela.fillStyle = "#0A3871";
@@ -230,7 +227,7 @@ function escreverLetraCorreta(index) {
 }
 
 function escreverLetraIncorreta(letra,erros) {
-    tela.font = "bold 40px Inter"
+    tela.font = "bold 40px Source Code Pro";
     tela.lineCap = "round";
     tela.fillStyle = "#0A3871";
     tela.lineWidth = 6;
@@ -271,7 +268,7 @@ function escreverLetraIncorreta(letra,erros) {
 
 
 function exibirDerrota() {
-    tela.font = ' bold 42px Inter';
+    tela.font = "bold 42px Source Code Pro";;
     tela.lineWidth=6;
     tela.lineCap="round";
     tela.lineJoin="round";
@@ -288,7 +285,7 @@ function exibirVitoria() {
         
     // }
     tela.fill = "red";
-    tela.font = 'bold 42px Inter';
+    tela.font = "bold 42px Source Code Pro";
     tela.lineWidth=6;
     tela.lineCap="round";
     tela.lineJoin="round";

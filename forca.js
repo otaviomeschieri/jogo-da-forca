@@ -15,7 +15,7 @@ let letraEscolhida = [];
 
 // document.getElementById("div-fim-de-jogo").style.display = "none";
 
-document.onmousedown = false;
+// document.onmousedown = false;
 
 //eventos
 
@@ -55,11 +55,36 @@ function verificarLetraClicada(key) {
   if (letras.length < 1 || letras.indexOf(key) < 0) {
     letras.push(key)
     return false
+    
   }
   else {
     letras.push(key)
     return true
   }
+}
+
+function xis(letra) {
+  // if(!letras.includes(letra)) {
+  //     letras.push(letra)
+      if(palavraSecreta.includes(letra)) {
+        adicionarLetraCorreta(palavraSecreta.indexOf(letra))
+          for(let i = 0; i < palavraSecreta.length; i++) {
+              if(palavraSecreta[i] === letra) {
+                  escreverLetraCorreta(i);
+                  document.getElementById(letra).style.background = "green"
+                  verificarVencedor(letra);
+              }
+          }
+      } else {
+          // adicionarLetraIncorreta();
+          document.getElementById(letra).style.background = "red"
+          desenharForca(erros)
+          verificarFimDeJogo(letra)
+          
+      }
+      console.log(letras)
+  // }
+
 }
 
 function adicionarLetraCorreta(i) {
@@ -85,7 +110,8 @@ function verificarFimDeJogo(letra) {
     // else
     if(letraEscolhida.length < palavraSecreta.length) {
       adicionarLetraIncorreta(letra)
-      escreverLetraIncorreta(letra, erros)
+      escreverLetraIncorreta(letra,erros)
+      letras = []
     }
   }
  } 
@@ -95,6 +121,7 @@ function verificarVencedor(letra) {
   letraEscolhida.push(letra.toUpperCase());
   if (letraEscolhida.length == palavraSecreta.length) {
     exibirVitoria();
+    letras = []
   }
 }
 
@@ -161,6 +188,9 @@ function iniciarJogo(sorteia,index) {
 
   nomeDaCategoria(index);
 
+  // document.getElementById("teclado-virtual").style.display = "flex";
+  mostrarTeclado();
+
   // faz com que os botões de "novo jogo" e "sair" apareceçam
   document.getElementById("btn-novo-jogo").style.display = "block";
   
@@ -168,25 +198,13 @@ function iniciarJogo(sorteia,index) {
   document.onkeydown = (e) => {
     // coloca a letra digitada em maiúscula
     let letra = e.key.toUpperCase();
+
+    verificarLetraClicada(letra)
+
     //verifica se o usuário não perdeu
     if (letrasIncorretas.length <= numeroDeErros) {
       if (!verificarLetraClicada(e.key) && verificarLetra(e.keyCode)) {
-        if (palavraSecreta.includes(letra)) {
-          adicionarLetraCorreta(palavraSecreta.indexOf(letra))
-          for (let i = 0; i < palavraSecreta.length; i++) {
-            if (palavraSecreta[i] === letra) {
-              escreverLetraCorreta(i);
-              verificarVencedor(letra);
-            }
-          }
-        }
-        // se o usuário cometeu mais erros do que o permitido, chama as funcões
-        // que desenham a forca e exibe a mesnagem de fim de jogo
-        else {
-          if (!verificarLetraClicada(e.key) && !verificarVencedor(letra)) return;
-          desenharForca(erros);
-          verificarFimDeJogo(letra);
-        }
+        xis(letra);
       }
     }
     // else {
@@ -194,3 +212,20 @@ function iniciarJogo(sorteia,index) {
     // }
   }
 }
+
+let teclas = document.getElementsByClassName("keys");
+
+function clicaLetra(e) {
+  document.getElementById(e).onclick = () => {
+    xis(tecla);
+  }
+
+  let tecla = e
+  console.log(tecla)
+  xis(tecla)
+  
+}
+
+let teclado = document.querySelector(".botao-teclado")
+
+teclado.addEventListener("click" , clicaLetra)

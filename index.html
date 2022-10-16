@@ -37,7 +37,7 @@
             <div id="adicionar-palavra" class="adicionar-palavra">
                 <input class="text-input" type="text" id="input-nova-palavra" minlength="4" maxlength="10" placeholder="Escreva uma palavra">
                 <div class="avisos">
-                    <img src="/imagens/!.png" class="img-alerta">
+                    <img src="./imagens/!.png" class="img-alerta">
                     <label for="input-texto"> Entre 4 e 10 caracteres</label>
                 </div>
                 <div class="div-botoes">
@@ -50,7 +50,7 @@
         <section id="div-aparece-forca" class="canvas">
             <!-- Canvas -->
             <canvas id="forca" height="860px" width="1300px"></canvas>
-            <!-- Teclado -->
+
             <div class="teclado" id="teclado-virtual">
                 <div class="linha-1">
                     <button id="Q" class="botao-teclado" onclick="clicaLetra('Q')">q</button>
@@ -74,7 +74,7 @@
                     <button id="J" class="botao-teclado" onclick="clicaLetra('J')">j</button>
                     <button id="K" class="botao-teclado" onclick="clicaLetra('K')">k</button>
                     <button id="L" class="botao-teclado" onclick="clicaLetra('L')">l</button>
-                    <button id="Ç" class="botao-teclado" onclick="clicaLetra('Ç')">ç</button>
+                    <!-- <button id="Ç" class="botao-teclado" onclick="clicaLetra('Ç')">ç</button> -->
                 </div>
                 <div class="linha-3">
                     <button id="Z" class="botao-teclado" onclick="clicaLetra('Z')">z</button>
@@ -85,7 +85,9 @@
                     <button id="N" class="botao-teclado" onclick="clicaLetra('N')">n</button>
                     <button id="M" class="botao-teclado" onclick="clicaLetra('M')">m</button>
                 </div>
+            
             </div>
+
         </section>
         <!-- FIM DE JOGO -->
         <!-- <section id="div-fim-de-jogo">
@@ -115,6 +117,7 @@
     <script type="text/javascript" src="forca.js"></script>
     <script type="text/javascript" src="canvas.js"></script>
     <script type="text/javascript" src="palavras.js"></script>
+    <script type="text/javascript" src="teclado.js"></script>
 
 </body>
 </html>
