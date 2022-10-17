@@ -2,12 +2,12 @@ function desenharCanvas() {
     tela.lineWidth = 8;
     tela.lineCap = "round";
     tela.lineJoin = "round";
-    tela.strokeStyle = "#0A3871";
+    tela.strokeStyle = "#000000";
     
     //Base da forca
     tela.beginPath();
-    tela.moveTo(100,500);
-    tela.lineTo(450,500);
+    tela.moveTo(100,600);
+    tela.lineTo(380,600);
     tela.stroke();
     tela.closePath();
 }
@@ -17,12 +17,12 @@ function desenharLinhas(index,letra,erros) {
     tela.lineCap = "round";
     tela.lineJoin = "round";
     tela.fillStyle = "#F3F5FC";
-    tela.strokeStyle = "#0A3871";
+    tela.strokeStyle = "#000000";
     
     let largura = 800/palavraSecreta.length;
     for(let i = 0; i < palavraSecreta.length; i++) {
-        tela.moveTo(500+(largura*i),450);
-        tela.lineTo(550+(largura*i),450);
+        tela.moveTo(450+(largura*i),550);
+        tela.lineTo(500+(largura*i),550);
     }
     escreverLetraCorreta(index);
     escreverLetraIncorreta(letra,erros);
@@ -35,25 +35,25 @@ function desenharForca(erros) {
     tela.lineWidth = 8;
     tela.lineCap = "round";
     tela.lineJoin = "round";
-    tela.strokeStyle = "#0A3871";
+    tela.strokeStyle = "#000000";
     
     // Forca
     if(erros === 7) { 
-        tela.moveTo(125,500);
-        tela.lineTo(125,150);
-        tela.moveTo(270,150);
-        tela.lineTo(125,150);
+        tela.moveTo(125,600);
+        tela.lineTo(125,250);
+        tela.moveTo(270,250);
+        tela.lineTo(125,250);
     }
     // Corda
     if(erros === 6) { 
-        tela.moveTo(270,150);
-        tela.lineTo(270,180);
+        tela.moveTo(270,250);
+        tela.lineTo(270,280);
     }
     // Cabeça
     if(erros === 5) {
         let emoji02 = new Image();
         emoji02.addEventListener('load',() => {
-            tela.drawImage(emoji02,231,180,78,74);
+            tela.drawImage(emoji02,231,280,78,74);
         });
         emoji02.src = "./imagens/emoji02.png";
     }
@@ -64,13 +64,13 @@ function desenharForca(erros) {
         //     tela.drawImage(emoji03,560,115);
         // },false);
         // emoji03.src = "./imagens/emoji03.png";
-        tela.moveTo(270,254);
-        tela.lineTo(270,370);
+        tela.moveTo(270,354);
+        tela.lineTo(270,470);
     }
     // Perna esquerda
     if(erros === 3) {
-        tela.moveTo(270,370);
-        tela.lineTo(220,431);
+        tela.moveTo(270,470);
+        tela.lineTo(220,531);
     }
     // Perna direita
     if(erros === 2) {
@@ -80,8 +80,8 @@ function desenharForca(erros) {
         //     emoji05.addEventListener('load',() => {
         //         tela.drawImage(emoji05,560,115);
         // })
-        tela.moveTo(270,370);
-        tela.lineTo(320,431);
+        tela.moveTo(270,470);
+        tela.lineTo(320,531);
     }
     // Braço esquerdo
     if(erros === 1) {
@@ -91,8 +91,8 @@ function desenharForca(erros) {
         //     emoji06.addEventListener('load',() => {
         //         tela.drawImage(emoji06,560,115);
         // })
-        tela.moveTo(270,290);
-        tela.lineTo(230,330);
+        tela.moveTo(270,390);
+        tela.lineTo(230,430);
     }
     // Braço direito
     if(erros === 0) {
@@ -102,8 +102,8 @@ function desenharForca(erros) {
         //     cabeca.addEventListener('load',() => {
         //         tela.drawImage(cabeca,560,115);
         // })
-        tela.moveTo(270,290);
-        tela.lineTo(310,330);
+        tela.moveTo(270,390);
+        tela.lineTo(310,430);
         tela.stroke();
         tela.closePath();
         exibirDerrota();
@@ -131,20 +131,26 @@ function nomeDaCategoria(index) {
 
 function escreverLetraCorreta(index) {
     tela.font = "bold 52px Source Code Pro";
+    tela.strokeStyle = 'black';
     tela.textBaseline = "bottom";
     tela.lineCap = "round";
-    tela.fillStyle = "#0A3871";
-    tela.lineWidth = 6;
+    tela.fillStyle = "#ffff00";
+    tela.lineWidth = 5;
     let largura = 800/palavraSecreta.length;
-    tela.fillText(palavraSecreta[index],523 + (largura * index),450);
+    tela.strokeText(palavraSecreta[index],473 + (largura * index),550);
+    tela.fillText(palavraSecreta[index],473 + (largura * index),550);
 }
+
+function limpaTela() {
+    tela.clearRect(0,0,1300,800)
+ }
 
 function escreverLetraIncorreta(letra,erros) {
     tela.font = "bold 40px Source Code Pro";
     tela.lineCap = "round";
-    tela.fillStyle = "#0A3871";
+    tela.fillStyle = "#ff0000";
     tela.lineWidth = 6;
-    tela.fillText(letra,520 + (40 * (10 - erros)),570,40);
+    tela.fillText(letra,470 + (40 * (10 - erros)),670,40);
     // desenharErros();
     desenharForca(erros);
 }
@@ -194,7 +200,7 @@ function exibirDerrota() {
 function exibirVitoria() {
     // if(acertos == palavraSecreta.length) {
     //     letras = [];
-    //     tela.clearRect(0,0,1300,860);
+    //     tela.clearRect(0,0,1300,800);
     
     // }
     tela.fill = "red";

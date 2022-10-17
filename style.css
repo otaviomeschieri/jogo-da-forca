@@ -138,7 +138,7 @@ body {
     /* justify-content: center; */
     color: #ffffff;
     cursor: pointer;
-    margin-top: 30px;
+    margin-top: 50px;
     transition: 400ms;
 }
 
@@ -363,8 +363,36 @@ body {
    transform: scale(1.1);
 }
 
+.novo-jogo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
+}
+
 .btn-novo-jogo {
     display: flex;
+    display: inline-block;
+    /* flex-direction: row; */
+    /* align-items: stretch; */
+    /* padding: 28px; */
+    /* position: absolute; */
+    width: 600px;
+    height: 70px;
+    background: #073468;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 22px;
+    /* display: flex; */
+    /* justify-content: center; */
+    color: #ffffff;
+    cursor: pointer;
+    /* margin-top: -100px; */
+    transition: 400ms;
+
+    /* display: flex;
     flex-direction: row;
     align-items: flex-start;
     padding: 24px;
@@ -389,7 +417,14 @@ body {
     font-size: 22px;
     line-height: 19px;
     justify-content: center; 
-    cursor: pointer;
+    cursor: pointer;     */
+}
+
+.btn-novo-jogo:hover {
+    background-color: #fffce8;
+    color: #000000;
+    font-style: italic;
+    transform: scale(1.1);
 }
 
 .botoes-home {
