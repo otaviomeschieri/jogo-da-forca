@@ -66,25 +66,26 @@ function verificarLetraClicada(key) {
 function xis(letra) {
   // if(!letras.includes(letra)) {
   //     letras.push(letra)
-      if(palavraSecreta.includes(letra)) {
-        adicionarLetraCorreta(palavraSecreta.indexOf(letra))
-          for(let i = 0; i < palavraSecreta.length; i++) {
-              if(palavraSecreta[i] === letra) {
-                  escreverLetraCorreta(i);
-                  document.getElementById(letra).style.background = "green"
-                  verificarVencedor(letra);
-              }
-          }
-      } else {
-          // adicionarLetraIncorreta();
-          document.getElementById(letra).style.background = "red"
-          desenharForca(erros)
-          verificarFimDeJogo(letra)
-          
+  document.getElementById(letra).style.transitionDuration = "0.5s";
+  document.getElementById(letra).style.color = "white";
+  document.getElementById(letra).style.background = "gray";
+  if(palavraSecreta.includes(letra)) {
+    adicionarLetraCorreta(palavraSecreta.indexOf(letra))
+    for(let i = 0; i < palavraSecreta.length; i++) {
+      if(palavraSecreta[i] === letra) {
+        escreverLetraCorreta(i);
+        // document.getElementById(letra).style.background = "green"
+        verificarVencedor(letra);
       }
-      console.log(letras)
+    }
+  } else {
+    // adicionarLetraIncorreta();
+    // document.getElementById(letra).style.background = "red"
+    desenharForca(erros)
+    verificarFimDeJogo(letra)    
+  }
+  console.log(letras)
   // }
-
 }
 
 function adicionarLetraCorreta(i) {
@@ -99,7 +100,7 @@ function adicionarLetraIncorreta(letter) {
 
 function verificarFimDeJogo(letra) {
   //checa se a letra já foi incluída no array de letras certas ou erradas
- if(letraEscolhida.length < palavraSecreta.length) { 
+  if(letraEscolhida.length < palavraSecreta.length) { 
     //incluindo as letras já digitadas no array
     letrasIncorretas.push(letra);
     
@@ -114,7 +115,7 @@ function verificarFimDeJogo(letra) {
       letras = []
     }
   }
- } 
+} 
 
 //Verifica se o usuário ganhou
 function verificarVencedor(letra) {
@@ -146,21 +147,21 @@ function salvarPalavra() {
   
   //captura o que foi digitado
   let novaPalavra = document.getElementById("input-nova-palavra").value;
-
+  
   // let quantidadeMinima = document.getElementById("input-nova-palavra").minLength;
-
+  
   // Alerta de quantidade mínima
   // if(quantidadeMinima > document.getElementById("input-nova-palavra").innerHTML) {
   //   alert("A palavra deve ter no mínimo 4 caracteres");
   // } else {
   //   alert("Ok");
   // }
-
+  
   // inclui a palavra digitada no array de palavras a serem sorteadas
   if(novaPalavra !== ""){
     sorteiaTodas.push(novaPalavra.toUpperCase());
     alert("A palavra digitada foi salva");
-  
+    
     // faz a tela de adicionar palavra desaparecer
     document.getElementById("adicionar-palavra").style.display = "none";
     iniciarJogo(sorteiaTodas,5)
@@ -172,25 +173,25 @@ function salvarPalavra() {
 
 //inicia o jogo
 function iniciarJogo(sorteia,index) {
-
+  
   // faz com que os botões da tela home desapareçam
   document.getElementById("div-titulo").style.display = "none";
   document.getElementById("div-desaparece").style.display = "none";
-
+  
   //chama a função que desenha o canva
   desenharCanvas();
-
+  
   //chama a função que sorteia a palavra 
   escolherPalavraSecreta(sorteia);
-
+  
   //chama a funão que desenha as linhas
   desenharLinhas();
-
+  
   nomeDaCategoria(index);
-
+  
   // document.getElementById("teclado-virtual").style.display = "flex";
   mostrarTeclado();
-
+  
   // faz com que os botões de "novo jogo" e "sair" apareceçam
   document.getElementById("btn-novo-jogo").style.display = "block";
   
@@ -198,9 +199,9 @@ function iniciarJogo(sorteia,index) {
   document.onkeydown = (e) => {
     // coloca a letra digitada em maiúscula
     let letra = e.key.toUpperCase();
-
+    
     verificarLetraClicada(letra)
-
+    
     //verifica se o usuário não perdeu
     if (letrasIncorretas.length <= numeroDeErros) {
       if (!verificarLetraClicada(e.key) && verificarLetra(e.keyCode)) {
@@ -219,7 +220,7 @@ function clicaLetra(e) {
   document.getElementById(e).onclick = () => {
     xis(tecla);
   }
-
+  
   let tecla = e
   console.log(tecla)
   xis(tecla)
