@@ -3,6 +3,7 @@
 // let botonNuevoJuegoDesaparecido = document.getElementById("btn-novo-jogo").style.display = "none"
 // let divAgregarPalavra = document.getElementById("adicionar-palavra").style.display = 'none';
 let btnNovoJogo = document.getElementById("btn-novo-jogo");
+let btnTelaInicial = document.getElementById("btn-tela-inicial");
 // let btnTelaInicial = document.getElementById("btn-tela-inicial");
 let tela = document.getElementById("forca").getContext("2d");
 let palavraSecreta = "";
@@ -32,8 +33,13 @@ document.getElementById("btn-salvar").onclick = () => {
   salvarPalavra();
 }
 
-// atualiza a tela quando o usuário clica em "novo jogo"
+// atualiza a tela quando o usuário clica em "Novo Jogo"
 btnNovoJogo.addEventListener("click", function () {
+  location.reload();
+});
+
+// atualiza a tela quando o usuário clica em "Tela Inicial"
+btnTelaInicial.addEventListener("click", function () {
   location.reload();
 });
 
@@ -137,9 +143,16 @@ function verificarLetra(keyCode) {
 
 // faz com que os botões da tela de home desapareçam e mostra a tela de adicionar palavra
 function mostrarTelaAdicionarPalavras() {
+  document.getElementsByTagName("body")[0].style.background = "#fcd0a1";
+  document.getElementsByTagName("body")[0].style.background = "radial-gradient(ellipse farthest-corner at center center, #fcd0a1 0%, #b95f89 80%)";
+  document.getElementsByTagName("body")[0].style.background = "-webkit-radial-gradient(ellipse farthest-corner at center center, #fcd0a1 0%, #b95f89 80%)";
+  document.getElementsByTagName("body")[0].style.background = "-moz-radial-gradient(ellipse farthest-corner at center center, #fcd0a1 0%, #b95f89 80%)";
+
   document.getElementById("div-titulo").style.display = "none";
   document.getElementById("div-desaparece").style.display = "none";
   document.getElementById("adicionar-palavra").style.display = "block";
+
+  document.getElementById("input-nova-palavra").focus();
 }
 
 // salva a palavra que o usuário escreveu
@@ -173,7 +186,11 @@ function salvarPalavra() {
 
 //inicia o jogo
 function iniciarJogo(sorteia,index) {
-  
+  document.getElementsByTagName("body")[0].style.background = "#7fd1b9";
+  document.getElementsByTagName("body")[0].style.background = "linear-gradient(180deg,#7fd1b9 0%, #e0f2e9 80%)";
+  document.getElementsByTagName("body")[0].style.background = "-webkit-linear-gradient(180deg,#7fd1b9 0%, #e0f2e9 80%)";
+  document.getElementsByTagName("body")[0].style.background = "-moz-linear-gradient(180deg,#7fd1b9 0%, #e0f2e9 80%)";
+
   // faz com que os botões da tela home desapareçam
   document.getElementById("div-titulo").style.display = "none";
   document.getElementById("div-desaparece").style.display = "none";

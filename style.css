@@ -190,7 +190,7 @@ body {
 }
 
 .btn-adicionar:hover {
-    background-color: #fffce8;
+    background-color: #c9b532;
     color: #000000;
     font-style: italic;
     transform: scale(1.1);
@@ -206,17 +206,75 @@ body {
     height:50px;
 }
 
+.adicionar-palavra {
+    /* position: absolute; */
+    /* left: 30rem; */
+        /* width: auto; */
+        /* margin: 0 auto; */
+        /* padding-top: 50px; */
+        /* position: absolute; */
+        /* justify-content: center; */
+        /* text-align: center; */
+}
+
+.text-input {
+    /* Digite seu texto */
+  
+    position: absolute;
+    width: 400px;
+    height: auto;
+    /* left: 465px; */
+    /* right: 20px; */
+    /* top: 150px; */
+    margin: 200px 0 0 465px;
+    padding: 5px 30px 2px;
+  
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 150%;
+    justify-content: baseline;
+    /* identical to box height, or 48px */
+   
+  
+    /* Dark blue/dark-blue-300 */
+  
+    color: #5f1437;
+    letter-spacing: 1px;
+    /* background: transparent; */
+    /* border: none; */
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    text-transform: uppercase;
+    }
+
+  ::placeholder {
+    color: #ac753b;
+    text-transform:lowercase;
+}
+  
+.text-input:focus { 
+      /* border: none; */
+      border: 1px solid #911313;
+      outline: none;
+    }
+
 .avisos {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0px;
+    /* padding: 0px; */
     
     position: absolute;
     width: auto;
     height: 18px;
-    left: 2rem;
-    top: 41rem;
+    left: 470px;
+    /* top: 41rem; */
+    bottom: 710px;
+}
+
+.input-texto {
+    margin-left: 10px;
 }
 
 .div-botoes {
@@ -224,9 +282,10 @@ body {
     flex-direction: row;
     align-items: flex-start;
     padding: 0px;
+    justify-content: space-between;
     
     position: absolute;
-    width: 680px;
+    width: 780px;
     height: 67px;
     left: 0;
     top: 43rem;
@@ -258,6 +317,7 @@ body {
     font-size: 22px;
     line-height: 19px;
     justify-content: center; 
+    cursor: pointer;
 }
 
 .btn-tela-inicial {
@@ -294,6 +354,7 @@ body {
     font-size: 22px;
     line-height: 19px;
     justify-content: center;
+    cursor: pointer;
 }
 
 .btn-iniciar {
@@ -422,7 +483,7 @@ body {
 }
 
 .btn-novo-jogo:hover {
-    background-color: #fffce8;
+    background-color: #c9b532;
     color: #000000;
     font-style: italic;
     transform: scale(1.1);
@@ -434,11 +495,6 @@ body {
     align-items: flex-start;
     position: absolute;
     left:42rem;*/
-}
-
-.adicionar-palavra {
-    position: absolute;
-    left: 30rem;
 }
 
 #div-fim-de-jogo {
