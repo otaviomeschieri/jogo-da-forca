@@ -6,7 +6,7 @@ body {
     box-sizing: border-box;
     font-family: 'Inter Tight', sans-serif;
     font-family: 'Source Code Pro', monospace;
-    background: #00c8ff;
+    background: #ff0000;
     background: radial-gradient(circle farthest-corner at center center, #00c8ff 0%, #007f9d 80%);
     background: -webkit-radial-gradient(circle farthest-corner at center center, #00c8ff 0%, #007f9d 80%);
     background: -moz-radial-gradient(circle farthest-corner at center center, #00c8ff 0%, #007f9d 80%);
@@ -332,7 +332,6 @@ body {
     /* position: absolute; */
     /* left: -596px; */
     /* top: -56px; */
-    
 }
 
 .teclado {
@@ -365,7 +364,8 @@ body {
 
 .novo-jogo {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
+    margin-left: 112px;
     margin-bottom: 70px;
 }
 
@@ -376,22 +376,23 @@ body {
     /* align-items: stretch; */
     /* padding: 28px; */
     /* position: absolute; */
-    width: 600px;
-    height: 70px;
-    background: #073468;
-    border-radius: 40px;
+    width: 250px;
+    height: 55px;
+    background: #082d7e;
+    border: 1px solid #000000;
+    border-radius: 35px;
     font-weight: 600;
-    font-size: 20px;
-    letter-spacing: 3px;
+    font-size: 17px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     line-height: 22px;
     /* display: flex; */
     /* justify-content: center; */
-    color: #ffffff;
+    color: #FFFFFF;
     cursor: pointer;
     /* margin-top: -100px; */
     transition: 400ms;
-
+    
     /* display: flex;
     flex-direction: row;
     align-items: flex-start;

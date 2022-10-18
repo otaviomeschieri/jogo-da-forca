@@ -81,7 +81,7 @@ function xis(letra) {
   } else {
     // adicionarLetraIncorreta();
     // document.getElementById(letra).style.background = "red"
-    desenharForca(erros)
+    desenharErros(erros)
     verificarFimDeJogo(letra)    
   }
   console.log(letras)
@@ -177,7 +177,7 @@ function iniciarJogo(sorteia,index) {
   // faz com que os botões da tela home desapareçam
   document.getElementById("div-titulo").style.display = "none";
   document.getElementById("div-desaparece").style.display = "none";
-  
+
   //chama a função que desenha o canva
   desenharCanvas();
   
