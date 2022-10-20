@@ -11,7 +11,6 @@
 </head>
 <body>
     <header>
-        <!-- <img src="/imagens/forca-icone.png" class="logo" alt="Logo"> -->
         <section id="div-titulo" class="div-titulo">
             <h1 id="titulo">Jogo da forca</h1>
             <h2 id="descricao">Escolha uma categoria para jogar</h2>
@@ -20,8 +19,6 @@
     <main>
         <!-- TELA INICIAL -->
         <section id="div-desaparece" class="botoes-home">
-            <!-- <h1 id="titulo">Jogo da forca</h1>
-            <h2 id="descricao">Escolha uma categoria para jogar</h2> -->
             <ul class="categorias">
                 <li><button class="btn-animais" onclick="iniciarJogo(sorteiaAnimal,0)">Animais</button></li>
                 <li><button class="btn-comidas" onclick="iniciarJogo(sorteiaComida,1)">Comidas</button></li>
@@ -43,14 +40,13 @@
                 <div class="div-botoes">
                     <button class="btn-salvar" id="btn-salvar">Salvar e iniciar</button>
                     <button class="btn-tela-inicial" id="btn-tela-inicial">Tela inicial</button>
-                    <!-- <button class="btn-iniciar" onclick="iniciarJogo(sorteiaTodas,5)">Iniciar jogo - Todas as categorias</button> -->
                 </div>
             </div>
         </section>
         <section id="div-aparece-forca" class="canvas">
-            <!-- Canvas -->
+            <!-- CANVAS -->
             <canvas id="forca" height="800px" width="1300px"></canvas>
-
+            <!-- TECLADO -->
             <div class="teclado" id="teclado-virtual">
                 <div class="linha-1">
                     <button id="Q" class="botao-teclado" onclick="clicaLetra('Q')">q</button>
@@ -74,7 +70,6 @@
                     <button id="J" class="botao-teclado" onclick="clicaLetra('J')">j</button>
                     <button id="K" class="botao-teclado" onclick="clicaLetra('K')">k</button>
                     <button id="L" class="botao-teclado" onclick="clicaLetra('L')">l</button>
-                    <!-- <button id="Ç" class="botao-teclado" onclick="clicaLetra('Ç')">ç</button> -->
                 </div>
                 <div class="linha-3">
                     <button id="Z" class="botao-teclado" onclick="clicaLetra('Z')">z</button>
@@ -85,24 +80,11 @@
                     <button id="N" class="botao-teclado" onclick="clicaLetra('N')">n</button>
                     <button id="M" class="botao-teclado" onclick="clicaLetra('M')">m</button>
                 </div>
-            
             </div>
-
         </section>
-        <!-- FIM DE JOGO -->
-        <!-- <section id="div-fim-de-jogo">
-            <div id="perdeu">
-                <p>Você perdeu</p>
-                <p id="mostra-palavra-secreta"></p>
-            </div>
-            <div id="ganhou">
-                <p>Você ganhou</p>
-            </div>
-        </section> -->
         <!-- BOTÃO NOVO JOGO -->
         <section class="novo-jogo">
             <button class="btn-novo-jogo" id="btn-novo-jogo">Novo Jogo</button>
-            <!-- <button class="btn-mudar-categoria" id="btn-mudar-categoria">Escolher outra categoria</button> -->
         </section>
     </main>
     <footer>
@@ -113,12 +95,10 @@
             <a href="https://www.linkedin.com/in/otaviomeschieri" target="_blank"><img src="./imagens/linkedin.png"></a>
         </div>
     </footer>
-
     <!-- Links -->
     <script type="text/javascript" src="forca.js"></script>
     <script type="text/javascript" src="canvas.js"></script>
     <script type="text/javascript" src="palavras.js"></script>
     <script type="text/javascript" src="teclado.js"></script>
-
 </body>
 </html>

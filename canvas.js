@@ -183,7 +183,6 @@ function nomeDaCategoria(index) {
     } else {
         tela.fillText(categorias[index],650,120);
     }
-    // tela.fillText(categorias[index],200,120);
 }
 
 function escreverLetraCorreta(index) {
@@ -198,45 +197,14 @@ function escreverLetraCorreta(index) {
     tela.fillText(palavraSecreta[index],473 + (largura * index),550);
 }
 
-// function limpaTela() {
-//     tela.clearRect(0,0,1300,800)
-//  }
-
 function escreverLetraIncorreta(letra,erros) {
     tela.font = "bold 40px Source Code Pro";
     tela.lineCap = "round";
     tela.fillStyle = "#ff0000";
     tela.lineWidth = 6;
     tela.fillText(letra,470 + (40 * (10 - erros)),680,40);
-    // desenharErros();
     desenharErros(erros);
 }
-
-// function desenharErros() {
-//     if(erros === 6) {
-//         desenharForca();
-//     }
-//     if(erros === 5) {
-//         desenharCabeca();
-//     }
-//     if(erros === 4) {
-//         desenharTronco();
-//     }
-//     if(erros === 3) {
-//         desenharBracoEsquerdo();
-//     }
-//     if(erros === 2) {
-//         desenharBracoDireito();
-//     }
-//     if(erros === 1) {
-//         desenharPernaEsquerda();
-//     }
-//     if(erros === 0) {
-//         desenharPernaDireita();
-//         //document.getElementById("perdeu").style.display = "flex";
-//         document.getElementById("mostra-palavra-secreta").innerHTML = "A palavra era " + palavraSecreta;
-//     }
-// }
 
 function exibirDerrota() {
     tela.font = "bold 60px Source Code Pro";
@@ -244,19 +212,11 @@ function exibirDerrota() {
     tela.lineCap = "round";
     tela.lineJoin = "round";
     tela.fillStyle = "#FF00D4";
-    tela.fillText("Fim de jogo!",830,270);
-    tela.fillText("A palavra era " + palavraSecreta,830,370);
+    tela.fillText("Fim de jogo!",800,270);
+    tela.fillText("A palavra era " + palavraSecreta,800,370);
 }
 
-// document.getElementById("mostra-palavra-secreta").innerHTML = "A palavra era " + palavraSecreta;
-
 function exibirVitoria() {
-    // if(acertos == palavraSecreta.length) {
-    //     letras = [];
-    //     tela.clearRect(0,0,1300,800);
-    
-    // }
-    // tela.fill = "red";
     tela.font = "bold 60px Source Code Pro";
     tela.lineWidth = 6;
     tela.lineCap = "round";
@@ -264,10 +224,4 @@ function exibirVitoria() {
     tela.fillStyle = "#FF6200";
     tela.fillText("Parabéns,",830,270);
     tela.fillText("você ganhou!",830,370);
-    
-    
-    
-    
-    
-    // setTimeout( recarregar , 1000);
 }

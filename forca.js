@@ -1,10 +1,6 @@
 //Seletores
-// let tela = document.querySelector("canvas");
-// let botonNuevoJuegoDesaparecido = document.getElementById("btn-novo-jogo").style.display = "none"
-// let divAgregarPalavra = document.getElementById("adicionar-palavra").style.display = 'none';
 let btnNovoJogo = document.getElementById("btn-novo-jogo");
 let btnTelaInicial = document.getElementById("btn-tela-inicial");
-// let btnTelaInicial = document.getElementById("btn-tela-inicial");
 let tela = document.getElementById("forca").getContext("2d");
 let palavraSecreta = "";
 let letras = [];
@@ -14,64 +10,47 @@ let letrasIncorretas = [];
 let numeroDeErros = 8;
 let letraEscolhida = [];
 
-// document.getElementById("div-fim-de-jogo").style.display = "none";
-
-// document.onmousedown = false;
-
-//eventos
-
-// captura o id "iniciar-juego" no momento do click e direciona ao método que inicia o jogo
-// document.getElementById("iniciar-jogo").onclick = () => {
-//   iniciarJogo();
-// }
-
 document.getElementById("adicionar-palavra").style.display = "none";
 document.getElementById("btn-novo-jogo").style.display = "none";
 
-// captura o id "btn-guardar", salva a palavra adicionada
+document.getElementById("forca").style.display = "none";
+
+// Captura o id "btn-salvar", salva a palavra adicionada
 document.getElementById("btn-salvar").onclick = () => {
   salvarPalavra();
 }
 
-// atualiza a tela quando o usuário clica em "Novo Jogo"
+// Atualiza a tela quando o usuário clica em "Novo Jogo"
 btnNovoJogo.addEventListener("click", function () {
   location.reload();
 });
 
-// atualiza a tela quando o usuário clica em "Tela Inicial"
+// Atualiza a tela quando o usuário clica em "Tela Inicial"
 btnTelaInicial.addEventListener("click", function () {
   location.reload();
 });
 
-// atualiza a tela quando o usuário clica em "tela inicial"
-// btnTelaInicial.addEventListener("click", function () {
-//   location.reload();
-// });
-
-//faz o sorteio da palavra
+//Faz o sorteio da palavra
 function escolherPalavraSecreta(evento) {
   let palavra = evento[Math.floor(Math.random() * evento.length)]
   palavraSecreta = palavra;
-  console.log(palavraSecreta);
   return palavra;
 }
 
-// verifica qual foi a letra clicada
+// Verifica qual foi a letra clicada
 function verificarLetraClicada(key) {
   if (letras.length < 1 || letras.indexOf(key) < 0) {
-    letras.push(key)
-    return false
+    letras.push(key);
+    return false;
     
   }
   else {
-    letras.push(key)
-    return true
+    letras.push(key);
+    return true;
   }
 }
 
-function xis(letra) {
-  // if(!letras.includes(letra)) {
-  //     letras.push(letra)
+function letraClicada(letra) {
   document.getElementById(letra).style.transitionDuration = "0.5s";
   document.getElementById(letra).style.color = "white";
   document.getElementById(letra).style.background = "gray";
@@ -80,45 +59,34 @@ function xis(letra) {
     for(let i = 0; i < palavraSecreta.length; i++) {
       if(palavraSecreta[i] === letra) {
         escreverLetraCorreta(i);
-        // document.getElementById(letra).style.background = "green"
         verificarVencedor(letra);
       }
     }
   } else {
-    // adicionarLetraIncorreta();
-    // document.getElementById(letra).style.background = "red"
-    desenharErros(erros)
-    verificarFimDeJogo(letra)    
+    desenharErros(erros);
+    verificarFimDeJogo(letra);
   }
-  console.log(letras)
-  // }
 }
 
 function adicionarLetraCorreta(i) {
-  palavraCorreta += palavraSecreta[i].toUpperCase()
+  palavraCorreta += palavraSecreta[i].toUpperCase();
 }
 
 function adicionarLetraIncorreta(letter) {
   if (palavraSecreta.indexOf(letter) <= 0) {
-    erros -= 1
+    erros -= 1;
   }
 }
 
 function verificarFimDeJogo(letra) {
-  //checa se a letra já foi incluída no array de letras certas ou erradas
+  //Checa se a letra já foi incluída no array de letras certas ou erradas
   if(letraEscolhida.length < palavraSecreta.length) { 
-    //incluindo as letras já digitadas no array
+    //Incluindo as letras já digitadas no array
     letrasIncorretas.push(letra);
-    
-    //valida se o usuário cometeu o número máximo de erros, para poder exibir a mesagem de fim de jogo
-    // if (letrasIncorretas.length > numeroDeErros) {
-    //   exibirDerrota()
-    // }
-    // else
     if(letraEscolhida.length < palavraSecreta.length) {
-      adicionarLetraIncorreta(letra)
-      escreverLetraIncorreta(letra,erros)
-      letras = []
+      adicionarLetraIncorreta(letra);
+      escreverLetraIncorreta(letra,erros);
+      letras = [];
     }
   }
 } 
@@ -128,11 +96,11 @@ function verificarVencedor(letra) {
   letraEscolhida.push(letra.toUpperCase());
   if (letraEscolhida.length == palavraSecreta.length) {
     exibirVitoria();
-    letras = []
+    letras = [];
   }
 }
 
-// impede que teclas como shift e outras sejam escritas
+// Impede que teclas como shift e outras sejam escritas
 function verificarLetra(keyCode) {
   if (typeof keyCode === "number" && keyCode >= 65 && keyCode <= 90) {
     return true;
@@ -141,41 +109,34 @@ function verificarLetra(keyCode) {
   }
 }
 
-// faz com que os botões da tela de home desapareçam e mostra a tela de adicionar palavra
+// Faz com que os botões da tela inicial desapareçam e mostra a tela de adicionar palavra
 function mostrarTelaAdicionarPalavras() {
+  // Muda a cor do background
   document.getElementsByTagName("body")[0].style.background = "#fcd0a1";
-  document.getElementsByTagName("body")[0].style.background = "radial-gradient(ellipse farthest-corner at center center, #fcd0a1 0%, #b95f89 80%)";
-  document.getElementsByTagName("body")[0].style.background = "-webkit-radial-gradient(ellipse farthest-corner at center center, #fcd0a1 0%, #b95f89 80%)";
-  document.getElementsByTagName("body")[0].style.background = "-moz-radial-gradient(ellipse farthest-corner at center center, #fcd0a1 0%, #b95f89 80%)";
-
+  document.getElementsByTagName("body")[0].style.background = "linear-gradient(90deg,#fcd0a1 0%, #b95f89 80%)";
+  document.getElementsByTagName("body")[0].style.background = "-webkit-linear-gradient(90deg,#fcd0a1 0%, #b95f89 80%)";
+  document.getElementsByTagName("body")[0].style.background = "-moz-linear-gradient(90deg,#fcd0a1 0%, #b95f89 80%)";
+  
+  document.getElementById("forca").style.display = "block";
   document.getElementById("div-titulo").style.display = "none";
   document.getElementById("div-desaparece").style.display = "none";
   document.getElementById("adicionar-palavra").style.display = "block";
-
+  
   document.getElementById("input-nova-palavra").focus();
 }
 
-// salva a palavra que o usuário escreveu
+// Salva a palavra que o usuário escreveu
 function salvarPalavra() {
   
-  //captura o que foi digitado
+  //Captura o que foi digitado
   let novaPalavra = document.getElementById("input-nova-palavra").value;
   
-  // let quantidadeMinima = document.getElementById("input-nova-palavra").minLength;
-  
-  // Alerta de quantidade mínima
-  // if(quantidadeMinima > document.getElementById("input-nova-palavra").innerHTML) {
-  //   alert("A palavra deve ter no mínimo 4 caracteres");
-  // } else {
-  //   alert("Ok");
-  // }
-  
-  // inclui a palavra digitada no array de palavras a serem sorteadas
+  // Inclui a palavra digitada no array de palavras a serem sorteadas
   if(novaPalavra !== ""){
     sorteiaTodas.push(novaPalavra.toUpperCase());
     alert("A palavra digitada foi salva");
     
-    // faz a tela de adicionar palavra desaparecer
+    // Faz a tela de adicionar palavra desaparecer
     document.getElementById("adicionar-palavra").style.display = "none";
     iniciarJogo(sorteiaTodas,5)
   }
@@ -184,50 +145,51 @@ function salvarPalavra() {
   }
 }
 
-//inicia o jogo
+//Inicia o jogo
 function iniciarJogo(sorteia,index) {
+  // Muda a cor do background
   document.getElementsByTagName("body")[0].style.background = "#7fd1b9";
-  document.getElementsByTagName("body")[0].style.background = "linear-gradient(180deg,#7fd1b9 0%, #e0f2e9 80%)";
-  document.getElementsByTagName("body")[0].style.background = "-webkit-linear-gradient(180deg,#7fd1b9 0%, #e0f2e9 80%)";
-  document.getElementsByTagName("body")[0].style.background = "-moz-linear-gradient(180deg,#7fd1b9 0%, #e0f2e9 80%)";
-
-  // faz com que os botões da tela home desapareçam
+  document.getElementsByTagName("body")[0].style.background = "linear-gradient(90deg,#7fd1b9 0%, #8ddcb6 80%)";
+  document.getElementsByTagName("body")[0].style.background = "-webkit-linear-gradient(90deg,#7fd1b9 0%, #8ddcb6 80%)";
+  document.getElementsByTagName("body")[0].style.background = "-moz-linear-gradient(90deg,#7fd1b9 0%, #8ddcb6 80%)";
+  
+  // Faz com que os botões da tela home desapareçam
   document.getElementById("div-titulo").style.display = "none";
   document.getElementById("div-desaparece").style.display = "none";
 
-  //chama a função que desenha o canva
+  document.getElementById("forca").style.display = "block";
+  
+  //Chama a função que desenha o canva
   desenharCanvas();
   
-  //chama a função que sorteia a palavra 
+  //Chama a função que sorteia a palavra 
   escolherPalavraSecreta(sorteia);
   
-  //chama a funão que desenha as linhas
+  //Chama a funão que desenha as linhas
   desenharLinhas();
   
+  // Escreve o nome da categoria
   nomeDaCategoria(index);
   
-  // document.getElementById("teclado-virtual").style.display = "flex";
+  // Mostra o telado de acordo com o tamanho da tela
   mostrarTeclado();
   
-  // faz com que os botões de "novo jogo" e "sair" apareceçam
+  // Faz com que os botões de "Novo Jogo" e "Sair" apareceçam
   document.getElementById("btn-novo-jogo").style.display = "block";
   
-  // captura a letra digitada
+  // Captura a letra digitada
   document.onkeydown = (e) => {
-    // coloca a letra digitada em maiúscula
+    // Coloca a letra digitada em maiúscula
     let letra = e.key.toUpperCase();
     
     verificarLetraClicada(letra)
     
-    //verifica se o usuário não perdeu
+    //Verifica se o usuário não perdeu
     if (letrasIncorretas.length <= numeroDeErros) {
       if (!verificarLetraClicada(e.key) && verificarLetra(e.keyCode)) {
-        xis(letra);
+        letraClicada(letra);
       }
     }
-    // else {
-    //   alert("Você atingiu o limíte de letras incorretas");
-    // }
   }
 }
 
@@ -235,15 +197,14 @@ let teclas = document.getElementsByClassName("keys");
 
 function clicaLetra(e) {
   document.getElementById(e).onclick = () => {
-    xis(tecla);
+    letraClicada(tecla);
   }
   
   let tecla = e
-  console.log(tecla)
-  xis(tecla)
+  letraClicada(tecla);
   
 }
 
-let teclado = document.querySelector(".botao-teclado")
+let teclado = document.querySelector(".botao-teclado");
 
-teclado.addEventListener("click" , clicaLetra)
+teclado.addEventListener("click" , clicaLetra);
