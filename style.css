@@ -455,7 +455,7 @@ footer p {
     .text-input {
         position: static;
         align-items: center;
-        width: auto;
+        width: 340px;
         height: auto;
         margin: 150px 0 0 45px;
         padding: 5px 30px 2px;
